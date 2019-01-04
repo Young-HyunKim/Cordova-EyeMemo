@@ -63,16 +63,6 @@ myApp.onPageInit("home-default", function (page) {
         showHomeTabsetting();
     });
 
-    $(document).ready(function() { 
-        $("button").click(function() { 
-        window.open(
-         "C:\\Users\\INA\\Desktop\\Cordova\\shuClass3\\www\\JS-OCR\\index.html", 
-         "_blank", 
-         "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400" 
-        ); 
-        }); 
-    });
-
     
     var set_CDT = setInterval(ContnetSet, 1000);
 
