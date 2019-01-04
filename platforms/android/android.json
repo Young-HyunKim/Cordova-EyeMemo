@@ -1,0 +1,57 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {
+      "res/xml/config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"Textocr\"><param name=\"android-package\" value=\"com.neutrinos.ocrplugin.Textocr\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "AndroidManifest.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />",
+              "count": 1
+            },
+            {
+              "xml": "<meta-data android:name=\"com.google.android.gms.vision.DEPENDENCIES\" android:value=\"ocr\" />",
+              "count": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "installed_plugins": {
+    "cordova-plugin-mobile-ocr": {
+      "PACKAGE_NAME": "org.devgirl.framework7.mediaexplorer"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "id": "cordova-plugin-mobile-ocr.rectext",
+      "file": "plugins/cordova-plugin-mobile-ocr/www/rectext.js",
+      "pluginId": "cordova-plugin-mobile-ocr",
+      "clobbers": [
+        "textocr"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-plugin-mobile-ocr": "1.0.1"
+  }
+}

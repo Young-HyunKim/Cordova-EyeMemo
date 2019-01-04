@@ -1,0 +1,4 @@
+#Tue Nov 13 23:02:35 KST 2018
+base.0=C\:\\Users\\INA\\Desktop\\Cordova\\shuClass3\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex

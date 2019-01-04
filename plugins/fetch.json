@@ -1,0 +1,10 @@
+{
+  "cordova-plugin-mobile-ocr": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-mobile-ocr@^1.0.1"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}
