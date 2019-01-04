@@ -167,16 +167,11 @@ function showHomeTabsetting() {
 
 
 $(document).ready(function () {
-    openDB();
-    createTable();
-    createPrivateTable();
-    SelectSubjectList();
     setInterval(SelectSubjectList, 5*1000);
     setInterval(C_selectSuject, 1000);
     
     if(IS_SubjectRegister == 1){
         log.console(IS_SubjectRegister)
-        C_selectSuject();
         var set_Subject_M = setInterval(C_selectSuject, 1000);
     }
 });
