@@ -245,8 +245,6 @@ function Select_Notes() {
 
             }
 
-
-
         }, function (tr, err) {
             alert('DB오류 ' + err.message + err.code);
         }
@@ -273,10 +271,6 @@ var Subject_List_Code_10 = "";
 var Subject_List_Code_11 = "";
 var Subject_List_Code_12 = "";
 var Subject_List_Code_13 = "";
-
-
-
-
 
 
 function SelectSubjectCode1() {
@@ -311,7 +305,6 @@ function SelectSubjectCode1() {
                     + "</h1>"
                     + "</div>"
                     + "</div>";
-
 
                 $$("#Today_Subject").show();
                 $$("#Today_Subject").append(html);

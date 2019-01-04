@@ -52,9 +52,7 @@ myApp.onPageInit("Register-Subject", function (page) {
         SelectSubjectList();
     });
     
-
     
-
     $$('#S_save').on('click', function () {
         switch (count) {
             case 1: Execusion1();
