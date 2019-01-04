@@ -198,23 +198,6 @@ window.onbeforeunload = function(){
 var set_Subject = setInterval(SelectSubjectList, 30*60*1000);
 
 
-function createPrivateTable() {
-
-    db.transaction(function (tr) {
-        var createSQL = 'create table if not exists Private_Storage(subject_name text, notes text, photo blob )';
-        tr.executeSql(createSQL, [], function () {
-            console.log('Private_Storage_테이블생성_sql 실행 성공...');
-        }, function () {
-            console.log('Private_Storage_테이블생성_sql 실행 실패...');
-        });
-    }, function () {
-        console.log('Private_Storage_테이블 생성 트랜잭션 실패...롤백은 자동');
-    }, function () {
-        console.log('Private_Storage_테이블 생성 트랜잭션 성공...');
-    });
-
-}
-
 function C_selectSuject() {
     db.transaction(function (tr) {
         var C_DayCode = 0;
