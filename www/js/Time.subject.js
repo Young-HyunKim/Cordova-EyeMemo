@@ -370,17 +370,7 @@ myApp.onPageInit("Time-subject", function (page) {
     });
 
 
-
-
-    $$("#btn_Add_MonContent").on('click', function () {
-        count += 1;
-        
-        if(count == 13){
-            myApp.alert("최대 12교시 까지 입력하실 수 있습니다.");
-            count=12;
-        }
-
-        IndexTemp_Mon = count;
+    function AddContent(DayName, count, DayName){
         var html = "";
 
         html += "<li class='item-content' id='" + DayName + "_List_" + count + "'>"
@@ -394,6 +384,21 @@ myApp.onPageInit("Time-subject", function (page) {
 
         $$("#" + DayName).show();
         $$("#" + DayName).append(html);
+    }
+
+
+    $$("#btn_Add_MonContent").on('click', function () {
+        count += 1;
+        
+        if(count == 13){
+            myApp.alert("최대 12교시 까지 입력하실 수 있습니다.");
+            count=12;
+        }
+
+        IndexTemp_Mon = count;
+        
+        AddContent(DayName, count, DayName);
+        
     });
 
     $$("#btn_Sub_MonContent").on('click', function () {
