@@ -54,6 +54,7 @@ myApp.onPageInit("Register-Subject", function (page) {
     
     
     $$('#S_save').on('click', function () {
+        mainView.router.loadPage('Time.subject.html');
         switch (count) {
             case 1: Execusion1();
                 break;
