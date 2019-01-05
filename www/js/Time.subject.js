@@ -1,37 +1,12 @@
 var Week_Code = 1;
-var Is_Check = 1;
-var IS_SubjectRegister = 0;
 var Add_Limit = 12;
 
-var tc_subject_name =  new Array(); 
+var Is_Check = 1;
+var IS_SubjectRegister = 0;
 
-var tc_subject_name_1 = "";
-var tc_subject_name_2 = "";
-var tc_subject_name_3 = "";
-var tc_subject_name_4 = "";
-var tc_subject_name_5 = "";
-var tc_subject_name_6 = "";
-var tc_subject_name_7 = "";
-var tc_subject_name_8 = "";
-var tc_subject_name_9 = "";
-var tc_subject_name_10 = "";
-var tc_subject_name_11 = "";
-var tc_subject_name_12 = "";
-var tc_subject_name_13 = "";
+var tc_subject_name = new Array();
+var time_code = new Array();  
 
-var time_code_1 = 0;
-var time_code_2 = 0;
-var time_code_3 = 0;
-var time_code_4 = 0;
-var time_code_5 = 0;
-var time_code_6 = 0;
-var time_code_7 = 0;
-var time_code_8 = 0;
-var time_code_9 = 0;
-var time_code_10 = 0;
-var time_code_11 = 0;
-var time_code_12 = 0;
-var time_code_13 = 0;
 
 myApp.onPageInit("Time-subject", function (page) {
 
@@ -43,6 +18,19 @@ myApp.onPageInit("Time-subject", function (page) {
     var IndexTemp_Wednes = 0;
     var IndexTemp_Thurs = 0;
     var IndexTemp_Fri = 0;
+
+    $(document).ready(function () {
+
+        for (var i = 0; i < tc_subject_name.length; i++) {
+            tc_subject_name[i] = "";
+        }
+
+        for (var i = 0; i < time_code.length; i++) {
+            time_code[i] = 0;
+        }
+
+    });
+
 
     $$('#btn-Save').on('click', function () {
         mainView.router.loadPage('home.default.html');
@@ -227,92 +215,95 @@ myApp.onPageInit("Time-subject", function (page) {
         }
 
         function S_Input1() {
-            time_code_1 = 9;
-            tc_subject_name_1 = $$("#" + DayName + "_Subject_" + 1).val();
+            time_code[0] = 9;
+            tc_subject_name[0] = $$("#" + DayName + "_Subject_" + 1).val();
 
             S_insertSubject1();
         }
 
         function S_Input2() {
-            time_code_2 = 10;
-            tc_subject_name_2 = $$("#" + DayName + "_Subject_" + 2).val();
+            time_code[1] = 10;
+            tc_subject_name[1] = $$("#" + DayName + "_Subject_" + 2).val();
 
             S_insertSubject2();
         }
 
         function S_Input3() {
-            time_code_3 = 11;
-            tc_subject_name_3 = $$("#" + DayName + "_Subject_" + 3).val();
+            time_code[2] = 11;
+            tc_subject_name[2] = $$("#" + DayName + "_Subject_" + 3).val();
+           
+            console.log(tc_subject_name[2]);
+            console.log(time_code[2]);
 
             S_insertSubject3();
         }
 
         function S_Input4() {
-            time_code_4 = 12;
-            tc_subject_name_4 = $$("#" + DayName + "_Subject_" + 4).val();
+            time_code[3] = 12;
+            tc_subject_name[3] = $$("#" + DayName + "_Subject_" + 4).val();
 
             S_insertSubject4();
         }
 
         function S_Input5() {
-            time_code_5 = 13;
-            tc_subject_name_5 = $$("#" + DayName + "_Subject_" + 5).val();
+            time_code[4] = 13;
+            tc_subject_name[4] = $$("#" + DayName + "_Subject_" + 5).val();
 
             S_insertSubject5();
         }
 
         function S_Input6() {
-            time_code_6 = 14;
-            tc_subject_name_6 = $$("#" + DayName + "_Subject_" + 6).val();
+            time_code[5] = 14;
+            tc_subject_name[5] = $$("#" + DayName + "_Subject_" + 6).val();
 
             S_insertSubject6();
         }
 
         function S_Input7() {
-            time_code_7 = 15;
-            tc_subject_name_7 = $$("#" + DayName + "_Subject_" + 7).val();
+            time_code[6] = 15;
+            tc_subject_name[6] = $$("#" + DayName + "_Subject_" + 7).val();
 
             S_insertSubject7();
         }
 
         function S_Input8() {
-            time_code_8 = 16;
-            tc_subject_name_8 = $$("#" + DayName + "_Subject_" + 8).val();
+            time_code[7] = 16;
+            tc_subject_name[7] = $$("#" + DayName + "_Subject_" + 8).val();
 
             S_insertSubject8();
         }
 
         function S_Input9() {
-            time_code_9 = 17;
-            tc_subject_name_9 = $$("#" + DayName + "_Subject_" + 9).val();
+            time_code[8] = 17;
+            tc_subject_name[8] = $$("#" + DayName + "_Subject_" + 9).val();
 
             S_insertSubject9();
         }
 
         function S_Input10() {
-            time_code_10 = 18;
-            tc_subject_name_10 = $$("#" + DayName + "_Subject_" + 10).val();
+            time_code[9] = 18;
+            tc_subject_name[9]= $$("#" + DayName + "_Subject_" + 10).val();
 
             S_insertSubject10();
         }
 
         function S_Input11() {
-            time_code_11 = 19;
-            tc_subject_name_1 = $$("#" + DayName + "_Subject_" + 11).val();
+            time_code[10] = 19;
+            tc_subject_name[10] = $$("#" + DayName + "_Subject_" + 11).val();
 
             S_insertSubject11();
         }
 
         function S_Input12() {
-            time_code_12 = 20;
-            tc_subject_name_1 = $$("#" + DayName + "_Subject_" + 12).val();
+            time_code[11] = 20;
+            tc_subject_name[11] = $$("#" + DayName + "_Subject_" + 12).val();
 
             S_insertSubject12();
         }
 
         function S_Input13() {
-            time_code_12 = 21;
-            tc_subject_name_1 = $$("#" + DayName + "_Subject_" + 13).val();
+            time_code[12] = 21;
+            tc_subject_name[12] = $$("#" + DayName + "_Subject_" + 13).val();
 
             S_insertSubject13();
         }
