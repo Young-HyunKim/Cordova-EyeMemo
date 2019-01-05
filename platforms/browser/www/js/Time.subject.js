@@ -50,20 +50,18 @@ myApp.onPageInit("Time-subject", function (page) {
         console.log(count);
 
         if(count == k){
-            S_Input1();
 
-            console.log("PASS");
+            ValueInput(count);
+            console.log("PASS"+ (k));
+
         }else if(count == (k + 1)){
-            S_Input1();
-            S_Input2();
-
+            
+            ValueInput(count);
             console.log("PASS"+ (k + 1));
 
         }else if(count == (k + 2)){
-            S_Input1();
-            S_Input2();
-            S_Input3();
             
+            ValueInput(count); 
             console.log("PASS"+ (k + 2));
             
         }else if(count == (k + 3)){
@@ -81,7 +79,7 @@ myApp.onPageInit("Time-subject", function (page) {
             S_Input4();
             S_Input5();
 
-            console.log("PASS");
+            console.log("PASS"+ (k + 4));
 
         }else if(count == (k + 5)){
             S_Input1();
@@ -91,7 +89,7 @@ myApp.onPageInit("Time-subject", function (page) {
             S_Input5();
             S_Input6();
 
-            console.log("PASS");
+            console.log("PASS"+ (k + 5));
 
         }else if(count == (k + 6)){
             S_Input1();
@@ -102,7 +100,7 @@ myApp.onPageInit("Time-subject", function (page) {
             S_Input6();
             S_Input7();
 
-            console.log("PASS");
+            console.log("PASS"+ (k + 6));
 
         }else if(count == (k + 7)){
             S_Input1();
@@ -114,7 +112,7 @@ myApp.onPageInit("Time-subject", function (page) {
             S_Input7();
             S_Input8();
 
-            console.log("PASS");
+            console.log("PASS"+ (k + 7));
 
         }else if(count == (k + 8)){
             S_Input1();
@@ -127,7 +125,7 @@ myApp.onPageInit("Time-subject", function (page) {
             S_Input8();
             S_Input9();
 
-            console.log("PASS");
+            console.log("PASS"+ (k + 8));
 
         }else if(count == (k + 9)){
             S_Input1();
@@ -141,7 +139,8 @@ myApp.onPageInit("Time-subject", function (page) {
             S_Input9();
             S_Input10();
 
-            console.log("PASS");
+            console.log("PASS"+ (k + 9));
+
         }else if(count == (k + 10)){
             S_Input1();
             S_Input2();
@@ -155,7 +154,7 @@ myApp.onPageInit("Time-subject", function (page) {
             S_Input10();
             S_Input11();
 
-            console.log("PASS");
+            console.log("PASS"+ (k + 10));
 
         }else if(count == (k + 11)){
             S_Input1();
@@ -171,9 +170,9 @@ myApp.onPageInit("Time-subject", function (page) {
             S_Input11();
             S_Input12();
           
-            console.log("PASS");
+            console.log("PASS"+ (k + 11));
 
-        }else{
+        }else if(count == (k + 12)){
             S_Input1();
             S_Input2();
             S_Input3();
@@ -188,11 +187,26 @@ myApp.onPageInit("Time-subject", function (page) {
             S_Input12();
             S_Input13();
 
-            console.log("PASS");
+            console.log("PASS"+ (k + 12));
+
+        }else{
 
         }
 
-        console.log("PASS"+ (k + 2));
+        function ValueInput(count){
+           
+            for (var i = 0; i < count; i++) {
+                time_code[i] = 9 + i;
+                tc_subject_name[i] = $$("#" + DayName + "_Subject_" + (i+1)).val();
+
+                console.log("PASS"+ i);
+
+                console.log(time_code[i]);
+                console.log(tc_subject_name[i]);
+            }
+        }
+
+       
 
 
         function S_Input1() {
@@ -204,16 +218,13 @@ myApp.onPageInit("Time-subject", function (page) {
         function S_Input2() {
             time_code[1] = 10;
             tc_subject_name[1] = $$("#" + DayName + "_Subject_" + 2).val();
-
         
         }
 
         function S_Input3() {
             time_code[2] = 11;
             tc_subject_name[2] = $$("#" + DayName + "_Subject_" + 3).val();
-           
-            console.log(tc_subject_name[2]);
-            console.log(time_code[2]);
+
 
            
         }
