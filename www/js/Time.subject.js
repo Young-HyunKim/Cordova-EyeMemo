@@ -319,9 +319,7 @@ myApp.onPageInit("Time-subject", function (page) {
 
     });
 
-
-
-
+    
     $('#Mons_List').slimScroll({
         height: '360px'
     });
@@ -341,8 +339,6 @@ myApp.onPageInit("Time-subject", function (page) {
     $('#Fri_List').slimScroll({
         height: '360px'
     });
-
-
 
 
     $$('#btn_Monday').on('click', function () {
@@ -695,38 +691,4 @@ function showScheduleFriday() {
     $$("#btn_Wednesday").removeClass('about-color').removeClass('color-red');
     $$("#btn_Thursday").removeClass('about-color').removeClass('color-red');
     $$("#btn_Tuesday").removeClass('about-color').removeClass('color-red');
-}
-
-
-$(document).ready(function(){
-    openDB();
-    createTable();
-   
-});
-
-
-var db = null;
-
-// 데이터베이스 생성 및 오픈
-function openDB() {
-    db = window.openDatabase('SubjectDB', '1.0', 'SubjectDB', 1024 * 1024);
-    console.log('1_DB 생성...');
-}
-
-function createTable() {
-
-    db.transaction(function (tr) {
-        var createSQL = 'create table if not exists Schedule(week_code integer, time_code text, tc_subject_name text )';
-        tr.executeSql(createSQL, [], function () {
-            console.log('Schedule_테이블생성_sql 실행 성공...');
-        }, function () {
-            console.log('Schedule_테이블생성_sql 실행 실패...');
-        });
-    }, function () {
-        console.log('Schedule_테이블 생성 트랜잭션 실패...롤백은 자동');
-    }, function () {
-        console.log('Schedule_테이블 생성 트랜잭션 성공...');
-    });
-
-
 }
