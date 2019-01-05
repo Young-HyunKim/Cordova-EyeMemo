@@ -46,61 +46,54 @@ myApp.onPageInit("Time-subject", function (page) {
     });
 
     $$('#btn-Save').on('click', function () {
+        var k = 1;
+        console.log(count);
 
-        for(var i = 0 ; i<count; i++){
-            if(i == count){
-                S_Execusion1+i();
-
-                console.log(i);
-                break;
-
-            }else{
-
-            }
-            
-        }
-        
-
-        function S_Execusion1(){
+        if(count == k){
             S_Input1();
-        }
 
-        function S_Execusion2(){
+            console.log("PASS");
+        }else if(count == (k + 1)){
             S_Input1();
             S_Input2();
-        }
 
-        function S_Execusion3(){
+            console.log("PASS"+ (k + 1));
+
+        }else if(count == (k + 2)){
             S_Input1();
             S_Input2();
             S_Input3();
-        }
-
-        function S_Execusion4(){
+            
+            console.log("PASS"+ (k + 2));
+            
+        }else if(count == (k + 3)){
             S_Input1();
             S_Input2();
             S_Input3();
             S_Input4();
-        }
 
-        function S_Execusion5(){
+            console.log("PASS"+ (k + 3));
+
+        }else if(count == (k + 4)){
             S_Input1();
             S_Input2();
             S_Input3();
             S_Input4();
             S_Input5();
-        }
-        
-        function S_Execusion6(){
+
+            console.log("PASS");
+
+        }else if(count == (k + 5)){
             S_Input1();
             S_Input2();
             S_Input3();
             S_Input4();
             S_Input5();
             S_Input6();
-        }
 
-        function S_Execusion7(){
+            console.log("PASS");
+
+        }else if(count == (k + 6)){
             S_Input1();
             S_Input2();
             S_Input3();
@@ -108,9 +101,10 @@ myApp.onPageInit("Time-subject", function (page) {
             S_Input5();
             S_Input6();
             S_Input7();
-        }
 
-        function S_Execusion8(){
+            console.log("PASS");
+
+        }else if(count == (k + 7)){
             S_Input1();
             S_Input2();
             S_Input3();
@@ -119,9 +113,10 @@ myApp.onPageInit("Time-subject", function (page) {
             S_Input6();
             S_Input7();
             S_Input8();
-        }
 
-        function S_Execusion9(){
+            console.log("PASS");
+
+        }else if(count == (k + 8)){
             S_Input1();
             S_Input2();
             S_Input3();
@@ -131,9 +126,10 @@ myApp.onPageInit("Time-subject", function (page) {
             S_Input7();
             S_Input8();
             S_Input9();
-        }
 
-        function S_Execusion10(){
+            console.log("PASS");
+
+        }else if(count == (k + 9)){
             S_Input1();
             S_Input2();
             S_Input3();
@@ -144,9 +140,9 @@ myApp.onPageInit("Time-subject", function (page) {
             S_Input8();
             S_Input9();
             S_Input10();
-        }
 
-        function S_Execusion11(){
+            console.log("PASS");
+        }else if(count == (k + 10)){
             S_Input1();
             S_Input2();
             S_Input3();
@@ -155,11 +151,13 @@ myApp.onPageInit("Time-subject", function (page) {
             S_Input6();
             S_Input7();
             S_Input8();
+            S_Input9();
             S_Input10();
             S_Input11();
-        }
 
-        function S_Execusion12(){
+            console.log("PASS");
+
+        }else if(count == (k + 11)){
             S_Input1();
             S_Input2();
             S_Input3();
@@ -172,9 +170,10 @@ myApp.onPageInit("Time-subject", function (page) {
             S_Input10();
             S_Input11();
             S_Input12();
-        }
+          
+            console.log("PASS");
 
-        function S_Execusion13(){
+        }else{
             S_Input1();
             S_Input2();
             S_Input3();
@@ -188,20 +187,25 @@ myApp.onPageInit("Time-subject", function (page) {
             S_Input11();
             S_Input12();
             S_Input13();
+
+            console.log("PASS");
+
         }
+
+        console.log("PASS"+ (k + 2));
+
 
         function S_Input1() {
             time_code[0] = 9;
             tc_subject_name[0] = $$("#" + DayName + "_Subject_" + 1).val();
 
-            S_insertSubject1();
         }
 
         function S_Input2() {
             time_code[1] = 10;
             tc_subject_name[1] = $$("#" + DayName + "_Subject_" + 2).val();
 
-            S_insertSubject2();
+        
         }
 
         function S_Input3() {
@@ -211,77 +215,77 @@ myApp.onPageInit("Time-subject", function (page) {
             console.log(tc_subject_name[2]);
             console.log(time_code[2]);
 
-            S_insertSubject3();
+           
         }
 
         function S_Input4() {
             time_code[3] = 12;
             tc_subject_name[3] = $$("#" + DayName + "_Subject_" + 4).val();
 
-            S_insertSubject4();
+           
         }
 
         function S_Input5() {
             time_code[4] = 13;
             tc_subject_name[4] = $$("#" + DayName + "_Subject_" + 5).val();
 
-            S_insertSubject5();
+           
         }
 
         function S_Input6() {
             time_code[5] = 14;
             tc_subject_name[5] = $$("#" + DayName + "_Subject_" + 6).val();
 
-            S_insertSubject6();
+            
         }
 
         function S_Input7() {
             time_code[6] = 15;
             tc_subject_name[6] = $$("#" + DayName + "_Subject_" + 7).val();
 
-            S_insertSubject7();
+           
         }
 
         function S_Input8() {
             time_code[7] = 16;
             tc_subject_name[7] = $$("#" + DayName + "_Subject_" + 8).val();
 
-            S_insertSubject8();
+          
         }
 
         function S_Input9() {
             time_code[8] = 17;
             tc_subject_name[8] = $$("#" + DayName + "_Subject_" + 9).val();
 
-            S_insertSubject9();
+         
         }
 
         function S_Input10() {
             time_code[9] = 18;
             tc_subject_name[9]= $$("#" + DayName + "_Subject_" + 10).val();
 
-            S_insertSubject10();
+         
         }
 
         function S_Input11() {
             time_code[10] = 19;
             tc_subject_name[10] = $$("#" + DayName + "_Subject_" + 11).val();
 
-            S_insertSubject11();
+           
         }
 
         function S_Input12() {
             time_code[11] = 20;
             tc_subject_name[11] = $$("#" + DayName + "_Subject_" + 12).val();
 
-            S_insertSubject12();
+          
         }
 
         function S_Input13() {
             time_code[12] = 21;
             tc_subject_name[12] = $$("#" + DayName + "_Subject_" + 13).val();
 
-            S_insertSubject13();
+        
         }
 
 
