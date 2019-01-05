@@ -15,6 +15,7 @@ myApp.onPageInit("home-default", function (page) {
 
     });
 
+
     $("#SN").css("margin", "0 auto");
     $("#note").css("margin", "0 auto");
     $("#scanner").css("margin", "0 auto");
@@ -24,8 +25,7 @@ myApp.onPageInit("home-default", function (page) {
     $("#Note-Null").css('border', 'solid #E21830');
     $("#Pic-Null").css('border', 'solid #E21830');
     
-    
-    
+
     $('#Note_List').slimScroll({
         height: '280px'
     });
@@ -34,13 +34,10 @@ myApp.onPageInit("home-default", function (page) {
         height: '210px'
     });
 
-    
-
     $('#MediaList').slimScroll({
         height: '360px'
     });
 
-   
     $('#Subject-List').slimScroll({
         height: '360px'
     });
@@ -64,16 +61,6 @@ myApp.onPageInit("home-default", function (page) {
 
     $$('#btn_setting').on('click', function () {
         showHomeTabsetting();
-    });
-
-    $(document).ready(function() { 
-        $("button").click(function() { 
-        window.open(
-         "C:\\Users\\INA\\Desktop\\Cordova\\shuClass3\\www\\JS-OCR\\index.html", 
-         "_blank", 
-         "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400" 
-        ); 
-        }); 
     });
 
     
@@ -180,16 +167,11 @@ function showHomeTabsetting() {
 
 
 $(document).ready(function () {
-    openDB();
-    createTable();
-    createPrivateTable();
-    SelectSubjectList();
     setInterval(SelectSubjectList, 5*1000);
     setInterval(C_selectSuject, 1000);
     
     if(IS_SubjectRegister == 1){
         log.console(IS_SubjectRegister)
-        C_selectSuject();
         var set_Subject_M = setInterval(C_selectSuject, 1000);
     }
 });
@@ -198,77 +180,8 @@ window.onbeforeunload = function(){
     SelectSubjectList();
 };
 
-
-
 var set_Subject = setInterval(SelectSubjectList, 30*60*1000);
 
-
-
-// 데이터베이스 생성 및 오픈
-function openDB() {
-    db = window.openDatabase('SubjectDB', '1.0', 'SubjectDB', 5120 * 1024);
-    console.log('1_DB 생성...');
-}
-
-function createTable() {
-    db.transaction(function (tr) {
-        var createSQL = 'create table if not exists SubjectRegister(subject_code text, subject_name text)';
-        tr.executeSql(createSQL, [], function () {
-            console.log('SubjectRegister_테이블 생성_sql 실행 성공...');
-        }, function () {
-            console.log('SubjectRegister_테이블 생성_sql 실행 실패...');
-        });
-    }, function () {
-        console.log('SubjectRegister_테이블 생성 트랜잭션 실패...롤백은 자동');
-    }, function () {
-        console.log('SubjectRegister_테이블 생성 트랜잭션 성공...');
-    });
-
-    db.transaction(function (tr) {
-        var createSQL = 'create table if not exists Schedule(week_code integer, subject_code text, time_code text)';
-        tr.executeSql(createSQL, [], function () {
-            console.log('Schedule_테이블생성_sql 실행 성공...');
-        }, function () {
-            console.log('Schedule1_테이블생성_sql 실행 실패...');
-        });
-    }, function () {
-        console.log('Schedule_테이블 생성 트랜잭션 실패...롤백은 자동');
-    }, function () {
-        console.log('Schedule_테이블 생성 트랜잭션 성공...');
-    });
-
-    db.transaction(function (tr) {
-        var createSQL = 'create table if not exists PreSetting(Is_Check integer)';
-        tr.executeSql(createSQL, [], function () {
-            console.log('PreSetting_테이블생성_sql 실행 성공...');
-        }, function () {
-            console.log('PreSetting_테이블생성_sql 실행 실패...');
-        });
-    }, function () {
-        console.log('PreSetting_테이블 생성 트랜잭션 실패...롤백은 자동');
-    }, function () {
-        console.log('PreSetting_테이블 생성 트랜잭션 성공...');
-    });
-
-
-}
-
-function createPrivateTable() {
-
-    db.transaction(function (tr) {
-        var createSQL = 'create table if not exists Private_Storage(subject_name text, notes text, photo blob )';
-        tr.executeSql(createSQL, [], function () {
-            console.log('Private_Storage_테이블생성_sql 실행 성공...');
-        }, function () {
-            console.log('Private_Storage_테이블생성_sql 실행 실패...');
-        });
-    }, function () {
-        console.log('Private_Storage_테이블 생성 트랜잭션 실패...롤백은 자동');
-    }, function () {
-        console.log('Private_Storage_테이블 생성 트랜잭션 성공...');
-    });
-
-}
 
 function C_selectSuject() {
     db.transaction(function (tr) {
@@ -332,8 +245,6 @@ function Select_Notes() {
 
             }
 
-
-
         }, function (tr, err) {
             alert('DB오류 ' + err.message + err.code);
         }
@@ -360,10 +271,6 @@ var Subject_List_Code_10 = "";
 var Subject_List_Code_11 = "";
 var Subject_List_Code_12 = "";
 var Subject_List_Code_13 = "";
-
-
-
-
 
 
 function SelectSubjectCode1() {
@@ -398,7 +305,6 @@ function SelectSubjectCode1() {
                     + "</h1>"
                     + "</div>"
                     + "</div>";
-
 
                 $$("#Today_Subject").show();
                 $$("#Today_Subject").append(html);
