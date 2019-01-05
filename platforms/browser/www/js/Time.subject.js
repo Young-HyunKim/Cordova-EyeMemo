@@ -47,47 +47,19 @@ myApp.onPageInit("Time-subject", function (page) {
 
     $$('#btn-Save').on('click', function () {
 
-        switch (count) {
-            case 1: S_Execusion1();
+        for(var i = 0 ; i<count; i++){
+            if(i == count){
+                S_Execusion1+i();
+
+                console.log(i);
                 break;
 
-            case 2: S_Execusion2();
-                break;
+            }else{
 
-            case 3: S_Execusion3();
-                break;
-
-            case 4: S_Execusion4();
-                break;
-
-            case 5: S_Execusion5();
-                break;
-
-            case 6: S_Execusion6();
-                break;
-
-            case 7: S_Execusion7();
-                break;
-
-            case 8: S_Execusion8();
-                break;
-
-            case 9: S_Execusion9();
-                break;
-
-            case 10: S_Execusion10();
-                break;
-
-            case 11: S_Execusion11();
-                break;
-
-            case 12: S_Execusion12();
-                break;
-
-            case 13: S_Execusion13();
-                break;
-
+            }
+            
         }
+        
 
         function S_Execusion1(){
             S_Input1();

@@ -46,89 +46,42 @@ myApp.onPageInit("Time-subject", function (page) {
     });
 
     $$('#btn-Save').on('click', function () {
-        
-        switch (count) {
-            case 1: S_Execusion1();
-                break;
+        var k = 1;
 
-            case 2: S_Execusion2();
-                break;
-
-            case 3: S_Execusion3();
-                break;
-
-            case 4: S_Execusion4();
-                break;
-
-            case 5: S_Execusion5();
-                break;
-
-            case 6: S_Execusion6();
-                break;
-
-            case 7: S_Execusion7();
-                break;
-
-            case 8: S_Execusion8();
-                break;
-
-            case 9: S_Execusion9();
-                break;
-
-            case 10: S_Execusion10();
-                break;
-
-            case 11: S_Execusion11();
-                break;
-
-            case 12: S_Execusion12();
-                break;
-
-            case 13: S_Execusion13();
-                break;
-
-        }
-
-        function S_Execusion1(){
+        if(count == k){
             S_Input1();
-        }
 
-        function S_Execusion2(){
+        }else if(count == (k + 1)){
             S_Input1();
             S_Input2();
-        }
 
-        function S_Execusion3(){
+        }else if(count == (k + 2)){
             S_Input1();
             S_Input2();
             S_Input3();
-        }
 
-        function S_Execusion4(){
+        }else if(count == (k + 3)){
             S_Input1();
             S_Input2();
             S_Input3();
             S_Input4();
-        }
 
-        function S_Execusion5(){
+        }else if(count == (k + 4)){
             S_Input1();
             S_Input2();
             S_Input3();
             S_Input4();
             S_Input5();
-        }
-        
-        function S_Execusion6(){
+
+        }else if(count == (k + 5)){
             S_Input1();
             S_Input2();
             S_Input3();
             S_Input4();
             S_Input5();
             S_Input6();
-        }
 
-        function S_Execusion7(){
+        }else if(count == (k + 6)){
             S_Input1();
             S_Input2();
             S_Input3();
@@ -136,9 +89,8 @@ myApp.onPageInit("Time-subject", function (page) {
             S_Input5();
             S_Input6();
             S_Input7();
-        }
 
-        function S_Execusion8(){
+        }else if(count == (k + 7)){
             S_Input1();
             S_Input2();
             S_Input3();
@@ -147,9 +99,8 @@ myApp.onPageInit("Time-subject", function (page) {
             S_Input6();
             S_Input7();
             S_Input8();
-        }
 
-        function S_Execusion9(){
+        }else if(count == (k + 8)){
             S_Input1();
             S_Input2();
             S_Input3();
@@ -159,9 +110,8 @@ myApp.onPageInit("Time-subject", function (page) {
             S_Input7();
             S_Input8();
             S_Input9();
-        }
 
-        function S_Execusion10(){
+        }else if(count == (k + 9)){
             S_Input1();
             S_Input2();
             S_Input3();
@@ -172,9 +122,8 @@ myApp.onPageInit("Time-subject", function (page) {
             S_Input8();
             S_Input9();
             S_Input10();
-        }
 
-        function S_Execusion11(){
+        }else if(count == (k + 10)){
             S_Input1();
             S_Input2();
             S_Input3();
@@ -183,11 +132,11 @@ myApp.onPageInit("Time-subject", function (page) {
             S_Input6();
             S_Input7();
             S_Input8();
+            S_Input9();
             S_Input10();
             S_Input11();
-        }
 
-        function S_Execusion12(){
+        }else if(count == (k + 11)){
             S_Input1();
             S_Input2();
             S_Input3();
@@ -200,9 +149,8 @@ myApp.onPageInit("Time-subject", function (page) {
             S_Input10();
             S_Input11();
             S_Input12();
-        }
-
-        function S_Execusion13(){
+          
+        }else{
             S_Input1();
             S_Input2();
             S_Input3();
@@ -216,7 +164,9 @@ myApp.onPageInit("Time-subject", function (page) {
             S_Input11();
             S_Input12();
             S_Input13();
+
         }
+
 
         function S_Input1() {
             time_code[0] = 9;
