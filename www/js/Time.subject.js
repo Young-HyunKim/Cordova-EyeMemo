@@ -1,7 +1,5 @@
 var Week_Code = 1;
 var Is_Check = 1;
-
-
 var IS_SubjectRegister = 0;
 
 var tc_subject_name_1 = "";
@@ -319,7 +317,7 @@ myApp.onPageInit("Time-subject", function (page) {
 
     });
 
-    
+
     $('#Mons_List').slimScroll({
         height: '360px'
     });
