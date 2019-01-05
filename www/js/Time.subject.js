@@ -21,12 +21,16 @@ myApp.onPageInit("Time-subject", function (page) {
 
     $(document).ready(function () {
 
-        for (var i = 0; i < tc_subject_name.length; i++) {
+        for (var i = 0; i < Add_Limit ; i++) {
             tc_subject_name[i] = "";
+            
+            console.log(tc_subject_name[i]);
         }
 
-        for (var i = 0; i < time_code.length; i++) {
+        for (var i = 0; i < Add_Limit ; i++) {
             time_code[i] = 0;
+
+            console.log(time_code[i]);
         }
 
     });
@@ -42,7 +46,7 @@ myApp.onPageInit("Time-subject", function (page) {
     });
 
     $$('#btn-Save').on('click', function () {
-
+        
         switch (count) {
             case 1: S_Execusion1();
                 break;

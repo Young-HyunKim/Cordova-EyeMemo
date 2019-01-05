@@ -7,33 +7,6 @@ var IS_SubjectRegister = 0;
 var tc_subject_name = new Array();
 var time_code = new Array();  
 
-var tc_subject_name_1 = "";
-var tc_subject_name_2 = "";
-var tc_subject_name_3 = "";
-var tc_subject_name_4 = "";
-var tc_subject_name_5 = "";
-var tc_subject_name_6 = "";
-var tc_subject_name_7 = "";
-var tc_subject_name_8 = "";
-var tc_subject_name_9 = "";
-var tc_subject_name_10 = "";
-var tc_subject_name_11 = "";
-var tc_subject_name_12 = "";
-var tc_subject_name_13 = "";
-
-var time_code_1 = 0;
-var time_code_2 = 0;
-var time_code_3 = 0;
-var time_code_4 = 0;
-var time_code_5 = 0;
-var time_code_6 = 0;
-var time_code_7 = 0;
-var time_code_8 = 0;
-var time_code_9 = 0;
-var time_code_10 = 0;
-var time_code_11 = 0;
-var time_code_12 = 0;
-var time_code_13 = 0;
 
 myApp.onPageInit("Time-subject", function (page) {
 
@@ -48,12 +21,16 @@ myApp.onPageInit("Time-subject", function (page) {
 
     $(document).ready(function () {
 
-        for (var i = 0; i < tc_subject_name.length; i++) {
+        for (var i = 0; i < Add_Limit ; i++) {
             tc_subject_name[i] = "";
+            
+            console.log(tc_subject_name[i]);
         }
 
-        for (var i = 0; i < time_code.length; i++) {
+        for (var i = 0; i < Add_Limit ; i++) {
             time_code[i] = 0;
+
+            console.log(time_code[i]);
         }
 
     });
@@ -261,7 +238,7 @@ myApp.onPageInit("Time-subject", function (page) {
            
             console.log(tc_subject_name[2]);
             console.log(time_code[2]);
-            
+
             S_insertSubject3();
         }
 
