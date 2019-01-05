@@ -389,16 +389,19 @@ myApp.onPageInit("Time-subject", function (page) {
 
     $$("#btn_Add_MonContent").on('click', function () {
         count += 1;
-        
+
+        IndexTemp_Mon = count;
+
         if(count == 13){
             myApp.alert("최대 12교시 까지 입력하실 수 있습니다.");
             count=12;
+
+        }else{
+
+            AddContent(DayName, count, DayName);
+            
         }
 
-        IndexTemp_Mon = count;
-        
-        AddContent(DayName, count, DayName);
-        
     });
 
     $$("#btn_Sub_MonContent").on('click', function () {
