@@ -389,6 +389,23 @@ myApp.onPageInit("Time-subject", function (page) {
         $$("#" + DayName).append(html);
     }
 
+    function SubContent(DayName, count, List_Day){
+        var html = "";
+
+        html += "<li class='item-content id='" + List_Day + "'>"
+            + "<div class='item-inner'>"
+            + "<div class='item-title label'>" + count + "교시</div>"
+            + "<div class='item-input'>"
+            + "<input type='text' name='title' placeholder='일정을 입력하세요.'>"
+            + "</div>"
+            + "</div>"
+            + "</li>"
+
+        $$("#" + DayName).show();
+        $$("#" + DayName + "_List_" + count).remove(html);
+    }
+   
+
 
     $$("#btn_Add_MonContent").on('click', function () {
         count += 1;
@@ -407,21 +424,12 @@ myApp.onPageInit("Time-subject", function (page) {
 
     });
 
+     
+
     $$("#btn_Sub_MonContent").on('click', function () {
-        var html = "";
-
-        html += "<li class='item-content id='Mons_List'>"
-            + "<div class='item-inner'>"
-            + "<div class='item-title label'>" + count + "교시</div>"
-            + "<div class='item-input'>"
-            + "<input type='text' name='title' placeholder='일정을 입력하세요.'>"
-            + "</div>"
-            + "</div>"
-            + "</li>"
-
-        $$("#" + DayName).show();
-        $$("#" + DayName + "_List_" + count).remove(html);
-
+        var List_Day ="Mons_List";
+        
+        SubContent(DayName, count, List_Day);
 
         if (count == 0) {
             count = 0;
@@ -451,19 +459,9 @@ myApp.onPageInit("Time-subject", function (page) {
     });
 
     $$("#btn_Sub_TuesContent").on('click', function () {
-        var html = "";
-
-        html += "<li class='item-content id='Mons_List'>"
-            + "<div class='item-inner'>"
-            + "<div class='item-title label'>" + count + "교시</div>"
-            + "<div class='item-input'>"
-            + "<input type='text' name='title' placeholder='일정을 입력하세요.'>"
-            + "</div>"
-            + "</div>"
-            + "</li>"
-
-        $$("#" + DayName).show();
-        $$("#" + DayName + "_List_" + count).remove(html);
+        var List_Day ="Tues_List";
+        
+        SubContent(DayName, count, List_Day);
 
         if (count == 0) {
             count = 0;
@@ -493,19 +491,9 @@ myApp.onPageInit("Time-subject", function (page) {
     });
 
     $$("#btn_Sub_WednesContent").on('click', function () {
-        var html = "";
-
-        html += "<li class='item-content id='Mons_List'>"
-            + "<div class='item-inner'>"
-            + "<div class='item-title label'>" + count + "교시</div>"
-            + "<div class='item-input'>"
-            + "<input type='text' name='title' placeholder='일정을 입력하세요.'>"
-            + "</div>"
-            + "</div>"
-            + "</li>"
-
-        $$("#" + DayName).show();
-        $$("#" + DayName + "_List_" + count).remove(html);
+        var List_Day ="Wednes_List";
+        
+        SubContent(DayName, count, List_Day);
 
 
         if (count == 0) {
@@ -536,19 +524,9 @@ myApp.onPageInit("Time-subject", function (page) {
     });
 
     $$("#btn_Sub_ThursContent").on('click', function () {
-        var html = "";
-
-        html += "<li class='item-content id='Mons_List'>"
-            + "<div class='item-inner'>"
-            + "<div class='item-title label'>" + count + "교시</div>"
-            + "<div class='item-input'>"
-            + "<input type='text' name='title' placeholder='일정을 입력하세요.'>"
-            + "</div>"
-            + "</div>"
-            + "</li>"
-
-        $$("#" + DayName).show();
-        $$("#" + DayName + "_List_" + count).remove(html);
+        var List_Day ="Thurs_List";
+        
+        SubContent(DayName, count, List_Day);
 
 
         if (count == 0) {
@@ -564,7 +542,7 @@ myApp.onPageInit("Time-subject", function (page) {
 
     $$("#btn_Add_FrisContent").on('click', function () {
         count += 1;
-        
+
         IndexTemp_Fri = count;
 
         if(count == (Add_Limit + 1)){
@@ -580,19 +558,9 @@ myApp.onPageInit("Time-subject", function (page) {
     });
 
     $$("#btn_Sub_FrisContent").on('click', function () {
-        var html = "";
-
-        html += "<li class='item-content id='Mons_List'>"
-            + "<div class='item-inner'>"
-            + "<div class='item-title label'>" + count + "교시</div>"
-            + "<div class='item-input'>"
-            + "<input type='text' name='title' placeholder='일정을 입력하세요.'>"
-            + "</div>"
-            + "</div>"
-            + "</li>"
-
-        $$("#" + DayName).show();
-        $$("#" + DayName + "_List_" + count).remove(html);
+        var List_Day ="Fri_List";
+        
+        SubContent(DayName, count, List_Day);
 
 
         if (count == 0) {
