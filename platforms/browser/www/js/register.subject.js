@@ -36,9 +36,18 @@ myApp.onPageInit("Register-Subject", function (page) {
     $$('#S_save').on('click', function () {
         mainView.router.loadPage('Time.subject.html');
        
-        var k = 1;
+        //var k = 1;
         console.log(count);
 
+        for (var i = 0; i < count; i++) {
+            if(count == (i+1)){
+                ValueInput(count);
+                console.log("for PASS"+ (i+1));
+            }
+            
+        }
+
+/*        
         if(count == k){
 
             ValueInput(count);
@@ -103,13 +112,15 @@ myApp.onPageInit("Register-Subject", function (page) {
 
         }
 
+*/
+
         function ValueInput(count){
            
             for (var i = 0; i < count; i++) {
                 subject_code[i] = "" + (i+1);
                 subject_name[i] = $$("#" + "Subject_" + (i+1)).val();
 
-                console.log("PASS"+ i);
+                console.log("PASS"+ (i+1));
 
                 console.log("subject_code[Content] : " + subject_code[i]);
                 console.log("Subject_name[Content] : " + subject_name[i]);

@@ -45,9 +45,20 @@ myApp.onPageInit("Time-subject", function (page) {
 
     });
 
+   
+
     $$('#btn-Save').on('click', function () {
-        var k = 1;
+        //var k = 1;
         console.log(count);
+
+        for (var i = 0; i < count; i++) {
+            if(count == (i+1)){
+                ValueInput(count);
+                console.log("for문 : PASS"+ (i+1));
+            }
+            
+        }
+
 
         if(count == k){
 
@@ -118,13 +129,14 @@ myApp.onPageInit("Time-subject", function (page) {
 
         }
 
+
         function ValueInput(count){
            
-            for (var i = 0; i < count; i++) {
+            for (let i = 0; i < count; i++) {
                 time_code[i] = 9 + i;
                 tc_subject_name[i] = $$("#" + DayName + "_Subject_" + (i+1)).val();
 
-                console.log("PASS"+ i);
+                console.log("PASS"+ (i+1));
 
                 console.log("Time_code[Content] : " + time_code[i]);
                 console.log("Subject_name[Content] : " + tc_subject_name[i]);
