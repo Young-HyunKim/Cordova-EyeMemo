@@ -24,13 +24,13 @@ myApp.onPageInit("Time-subject", function (page) {
         for (var i = 0; i < Add_Limit ; i++) {
             tc_subject_name[i] = "";
             
-            console.log(tc_subject_name[i]);
+            console.log("tc_subject_name : " +tc_subject_name[i]);
         }
 
         for (var i = 0; i < Add_Limit ; i++) {
             time_code[i] = 0;
 
-            console.log(time_code[i]);
+            console.log("time_code : " +time_code[i]);
         }
 
     });
@@ -126,8 +126,8 @@ myApp.onPageInit("Time-subject", function (page) {
 
                 console.log("PASS"+ i);
 
-                console.log(time_code[i]);
-                console.log(tc_subject_name[i]);
+                console.log("Time_code[Content] : " + time_code[i]);
+                console.log("Subject_name[Content] : " + tc_subject_name[i]);
             }
         }
 
