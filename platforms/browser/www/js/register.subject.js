@@ -1,47 +1,27 @@
-var subject_code = "";
-var subject_name = "";
+var Sub_Add_Limit = 12;
 
-var subject_code_1 = "";
-var subject_name_1 = "";
-
-var subject_code_2 = "";
-var subject_name_2 = "";
-
-var subject_code_3 = "";
-var subject_name_3 = "";
-
-var subject_code_4 = "";
-var subject_name_4 = "";
-
-var subject_code_5 = "";
-var subject_name_5 = "";
-
-var subject_code_6 = "";
-var subject_name_6 = "";
-
-var subject_code_7 = "";
-var subject_name_7 = "";
-
-var subject_code_8 = "";
-var subject_name_8 = "";
-
-var subject_code_9 = "";
-var subject_name_9 = "";
-
-var subject_code_10 = "";
-var subject_name_10 = "";
-
-var subject_code_11 = "";
-var subject_name_11 = "";
-
-var subject_code_12 = "";
-var subject_name_12 = "";
+var subject_code = new Array();
+var subject_name = new Array();
 
 
 myApp.onPageInit("Register-Subject", function (page) {
 
     var count = 0;
     var IndexTemp = 0;
+
+    $(document).ready(function () {
+
+        for (var i = 0; i < Sub_Add_Limit ; i++) {
+            subject_code[i] = "";
+            console.log("SubjectCode : " + subject_code[i]);
+        }
+
+        for (var i = 0; i < Sub_Add_Limit ; i++) {
+            subject_name[i] = "";
+            console.log("SubjectName : " + subject_name[i]);
+        }
+
+    });
 
     $('#Subject_List').slimScroll({
         height: '360px'
@@ -55,242 +35,85 @@ myApp.onPageInit("Register-Subject", function (page) {
     
     $$('#S_save').on('click', function () {
         mainView.router.loadPage('Time.subject.html');
-        switch (count) {
-            case 1: Execusion1();
-                break;
+       
+        var k = 1;
+        console.log(count);
 
-            case 2: Execusion2();
-                break;
+        if(count == k){
 
-            case 3: Execusion3();
-                break;
+            ValueInput(count);
+            console.log("PASS"+ (k));
 
-            case 4: Execusion4();
-                break;
+        }else if(count == (k + 1)){
+            
+            ValueInput(count);
+            console.log("PASS"+ (k + 1));
 
-            case 5: Execusion5();
-                break;
+        }else if(count == (k + 2)){
+            
+            ValueInput(count); 
+            console.log("PASS"+ (k + 2));
+            
+        }else if(count == (k + 3)){
+           
+            ValueInput(count);
+            console.log("PASS"+ (k + 3));
 
-            case 6: Execusion6();
-                break;
+        }else if(count == (k + 4)){
+           
+            ValueInput(count);
+            console.log("PASS"+ (k + 4));
 
-            case 7: Execusion7();
-                break;
+        }else if(count == (k + 5)){
+            
+            ValueInput(count);
+            console.log("PASS"+ (k + 5));
 
-            case 8: Execusion8();
-                break;
+        }else if(count == (k + 6)){
+           
+            ValueInput(count);
+            console.log("PASS"+ (k + 6));
 
-            case 9: Execusion9();
-                break;
+        }else if(count == (k + 7)){
+            
+            ValueInput(count);
+            console.log("PASS"+ (k + 7));
 
-            case 10: Execusion10();
-                break;
+        }else if(count == (k + 8)){
+            
+            ValueInput(count);
+            console.log("PASS"+ (k + 8));
 
-            case 11: Execusion11();
-                break;
+        }else if(count == (k + 9)){
+            
+            ValueInput(count);
+            console.log("PASS"+ (k + 9));
 
-            case 12: Execusion12();
-                break;
+        }else if(count == (k + 10)){
+            
+            ValueInput(count);
+            console.log("PASS"+ (k + 10));
+
+        }else if(count == (k + 11)){
+            
+            ValueInput(count);
+            console.log("PASS"+ (k + 11));
+
+        }else{
 
         }
 
-        function Execusion1(){
-            Input1();
-        }
+        function ValueInput(count){
+           
+            for (var i = 0; i < count; i++) {
+                subject_code[i] = "" + (i+1);
+                subject_name[i] = $$("#" + "Subject_" + (i+1)).val();
 
-        function Execusion2(){
-            Input1();
-            Input2();
-        }
+                console.log("PASS"+ i);
 
-        function Execusion3(){
-            Input1();
-            Input2();
-            Input3();
-        }
-
-        function Execusion4(){
-            Input1();
-            Input2();
-            Input3();
-            Input4();
-        }
-
-        function Execusion5(){
-            Input1();
-            Input2();
-            Input3();
-            Input4();
-            Input5();
-        }
-        
-        function Execusion6(){
-            Input1();
-            Input2();
-            Input3();
-            Input4();
-            Input5();
-            Input6();
-        }
-
-        function Execusion7(){
-            Input1();
-            Input2();
-            Input3();
-            Input4();
-            Input5();
-            Input6();
-            Input7();
-        }
-
-        function Execusion8(){
-            Input1();
-            Input2();
-            Input3();
-            Input4();
-            Input5();
-            Input6();
-            Input7();
-            Input8();
-        }
-
-        function Execusion9(){
-            Input1();
-            Input2();
-            Input3();
-            Input4();
-            Input5();
-            Input6();
-            Input7();
-            Input8();
-            Input9();
-        }
-
-        function Execusion10(){
-            Input1();
-            Input2();
-            Input3();
-            Input4();
-            Input5();
-            Input6();
-            Input7();
-            Input8();
-            Input9();
-            Input10();
-        }
-
-        function Execusion11(){
-            Input1();
-            Input2();
-            Input3();
-            Input4();
-            Input5();
-            Input6();
-            Input7();
-            Input8();
-            Input9();
-            Input10();
-            Input11();
-        }
-
-        function Execusion12(){
-            Input1();
-            Input2();
-            Input3();
-            Input4();
-            Input5();
-            Input6();
-            Input7();
-            Input8();
-            Input9();
-            Input10();
-            Input11();
-            Input12();
-        }
-
-        
-        function Input1() {
-            subject_code_1 = "" + 1;
-            subject_name_1 = $$("#" + "Subject_" + 1).val();
-
-            insertSubject1();
-        }
-
-        function Input2() {
-            subject_code_2 = "" + 2;
-            subject_name_2 = $$("#" + "Subject_" + 2).val();
-
-            insertSubject2();
-        }
-
-        function Input3() {
-            subject_code_3 = "" + 3;
-            subject_name_3 = $$("#" + "Subject_" + 3).val();
-
-            insertSubject3();
-        }
-
-        function Input4() {
-            subject_code_4 = "" + 4;
-            subject_name_4 = $$("#" + "Subject_" + 4).val();
-
-            insertSubject4();
-        }
-
-        function Input5() {
-            subject_code_5 = "" + 5;
-            subject_name_5 = $$("#" + "Subject_" + 5).val();
-
-            insertSubject5();
-        }
-
-        function Input6() {
-            subject_code_6 = "" + 6;
-            subject_name_6 = $$("#" + "Subject_" + 6).val();
-
-            insertSubject6();
-        }
-
-        function Input7() {
-            subject_code_7 = "" + 7;
-            subject_name_7 = $$("#" + "Subject_" + 7).val();
-
-            insertSubject7();
-        }
-
-        function Input8() {
-            subject_code_8 = "" + 8;
-            subject_name_8 = $$("#" + "Subject_" + 8).val();
-
-            insertSubject8();
-        }
-
-        function Input9() {
-            subject_code_9 = "" + 9;
-            subject_name_9 = $$("#" + "Subject_" + 9).val();
-
-            insertSubject9();
-        }
-
-        function Input10() {
-            subject_code_10 = "" + 10;
-            subject_name_10 = $$("#" + "Subject_" + 10).val();
-
-            insertSubject10();
-        }
-
-        function Input11() {
-            subject_code_11 = "" + 11;
-            subject_name_11 = $$("#" + "Subject_" + 11).val();
-
-            insertSubject11();
-        }
-
-        function Input12() {
-            subject_code_12 = "" + 12;
-            subject_name_12 = $$("#" + "Subject_" + 12).val();
-
-            insertSubject12();
+                console.log("subject_code[Content] : " + subject_code[i]);
+                console.log("Subject_name[Content] : " + subject_name[i]);
+            }
         }
 
         mainView.router.loadPage('Time.subject.html');
