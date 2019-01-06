@@ -48,7 +48,6 @@ myApp.onPageInit("Time-subject", function (page) {
    
 
     $$('#btn-Save').on('click', function () {
-        //var k = 1;
         console.log(count);
 
         for (var i = 0; i < count; i++) {

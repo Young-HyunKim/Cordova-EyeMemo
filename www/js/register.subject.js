@@ -35,8 +35,6 @@ myApp.onPageInit("Register-Subject", function (page) {
     
     $$('#S_save').on('click', function () {
         mainView.router.loadPage('Time.subject.html');
-       
-        //var k = 1;
         console.log(count);
 
         for (var i = 0; i < count; i++) {
