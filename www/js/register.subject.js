@@ -1,47 +1,24 @@
-var subject_code = "";
-var subject_name = "";
+var Sub_Add_Limit = 12;
 
-var subject_code_1 = "";
-var subject_name_1 = "";
-
-var subject_code_2 = "";
-var subject_name_2 = "";
-
-var subject_code_3 = "";
-var subject_name_3 = "";
-
-var subject_code_4 = "";
-var subject_name_4 = "";
-
-var subject_code_5 = "";
-var subject_name_5 = "";
-
-var subject_code_6 = "";
-var subject_name_6 = "";
-
-var subject_code_7 = "";
-var subject_name_7 = "";
-
-var subject_code_8 = "";
-var subject_name_8 = "";
-
-var subject_code_9 = "";
-var subject_name_9 = "";
-
-var subject_code_10 = "";
-var subject_name_10 = "";
-
-var subject_code_11 = "";
-var subject_name_11 = "";
-
-var subject_code_12 = "";
-var subject_name_12 = "";
+var subject_code = new Array();
+var subject_name = new Array();
 
 
 myApp.onPageInit("Register-Subject", function (page) {
 
     var count = 0;
     var IndexTemp = 0;
+
+    $(document).ready(function () {
+
+        for (var i = 0; i < Sub_Add_Limit ; i++) {
+            subject_code[i] = "";
+            subject_name[i] = "";
+
+            console.log(tc_subject_name[i]);
+        }
+
+    });
 
     $('#Subject_List').slimScroll({
         height: '360px'
