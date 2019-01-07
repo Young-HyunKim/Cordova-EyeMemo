@@ -4,6 +4,12 @@ var CDES_count = 0;
 var CD_WeekofDay = 0;
 var N_Subject_Name = "의학용어";
 
+var S_Code = "";
+var S_Name = "";
+var Color_Code = "";
+
+var Subject_List_Code = new Array();
+
 myApp.onPageInit("home-default", function (page) {
 
     showHomeTabSchedule();
@@ -235,18 +241,16 @@ function Select_Notes() {
 }
 
 
-
-var S_Code = "";
-var S_Name = "";
-var Color_Code = "";
-
-var Subject_List_Code = new Array();
-
 $(document).ready(function () {
     for (var i = 0; i < Sub_Add_Limit; i++) {
         Subject_List_Code[i] = "";
         console.log("Subject_List_Code : " + Subject_List_Code[i]);
     }
+});
+
+
+$(document).ready(function () {
+   
 });
 
 
