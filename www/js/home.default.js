@@ -24,12 +24,12 @@ myApp.onPageInit("home-default", function (page) {
     $("#Subject-Null").css('border', 'solid #E21830');
     $("#Note-Null").css('border', 'solid #E21830');
     $("#Pic-Null").css('border', 'solid #E21830');
-    
+
 
     $('#Note_List').slimScroll({
         height: '280px'
     });
-    
+
     $('#Pic_List').slimScroll({
         height: '210px'
     });
@@ -41,7 +41,7 @@ myApp.onPageInit("home-default", function (page) {
     $('#Subject-List').slimScroll({
         height: '360px'
     });
-   
+
 
     $$('#btnSearch').on('click', function () {
         Search();
@@ -63,7 +63,7 @@ myApp.onPageInit("home-default", function (page) {
         showHomeTabsetting();
     });
 
-    
+
     var set_CDT = setInterval(ContnetSet, 1000);
 
     function ContnetSet() {
@@ -167,16 +167,16 @@ function showHomeTabsetting() {
 
 
 $(document).ready(function () {
-    setInterval(SelectSubjectList, 5*1000);
+    setInterval(SelectSubjectList, 5 * 1000);
     setInterval(C_selectSuject, 1000);
-    
-    if(IS_SubjectRegister == 1){
+
+    if (IS_SubjectRegister == 1) {
         log.console(IS_SubjectRegister)
         var set_Subject_M = setInterval(C_selectSuject, 1000);
     }
 });
 
-window.onbeforeunload = function(){
+window.onbeforeunload = function () {
     SelectSubjectList();
 };
 
@@ -209,23 +209,23 @@ function C_selectSuject() {
 
 
 function Select_Notes() {
-   $('#Note-Null').hide();
-   $('#Pic-Null').hide();
+    $('#Note-Null').hide();
+    $('#Pic-Null').hide();
     db.transaction(function (tr) {
-        
-        
+
+
         var selectSQL = 'select notes, subject_name from Private_Storage where subject_name = ? ';
-        
-        tr.executeSql(selectSQL,[N_Subject_Name], function (tr, rs) {
-            console.log(rs.rows.item(0).subject_name + " 노트 검색" )
-            console.log( "노트 내용 : " + rs.rows.item(0).notes)
-            console.log("검색 과목 : " + N_Subject_Name )
+
+        tr.executeSql(selectSQL, [N_Subject_Name], function (tr, rs) {
+            console.log(rs.rows.item(0).subject_name + " 노트 검색")
+            console.log("노트 내용 : " + rs.rows.item(0).notes)
+            console.log("검색 과목 : " + N_Subject_Name)
 
 
-            for (var i = 0 ; i < rs.rows.length; i++) {
+            for (var i = 0; i < rs.rows.length; i++) {
                 $$("#Notes").show();
-                $$("#Subject-Note-"+ i ).remove(html);
-               
+                $$("#Subject-Note-" + i).remove(html);
+
                 var html = "";
 
                 html += "<div class='card' id='Subject-Note-" + i + "' style= 'margin: 30px;'>"
@@ -239,7 +239,7 @@ function Select_Notes() {
                 $$("#Notes").show();
                 $$("#Notes").append(html);
 
-                $("#Subject-Note-"+ i ).css('border', 'solid #E21830');
+                $("#Subject-Note-" + i).css('border', 'solid #E21830');
 
             }
 
@@ -259,11 +259,34 @@ var Color_Code = "";
 var Subject_List_Code = new Array();
 
 $(document).ready(function () {
-    for (var i = 0; i < Sub_Add_Limit ; i++) {
+    for (var i = 0; i < Sub_Add_Limit; i++) {
         Subject_List_Code[i] = "";
         console.log("Subject_List_Code : " + Subject_List_Code[i]);
     }
 });
+
+
+function SelectScheduleList() {
+    var html = "";
+
+    html += "<div class='card' id='Schedule-Card-" + 1 + "' style= 'margin: 30px; color:" + Color_Code + ";'>"
+        + "<div class='content-block' style= 'padding-top: 30px; padding-bottom: 30px;'>"
+        + "<p style='text-align: center; margin-bottom: -5px; margin-top: 10px;'>"
+        + "<span>" + ((9) + "시 00분 ~ " + (9) + "시 50분") + "</span><br>"
+        + "</p>"
+
+        + "<h2 style='text-align: center; margin-top: -5px; margin-bottom: 5px;'>"
+        + "<span id='Subject-Name-" + 1 + "'>" + Subject_List_Code_1 + "</span>"
+        + "</h1>"
+        + "</div>"
+        + "</div>";
+
+    $$("#Today_Subject").show();
+    $$("#Today_Subject").append(html);
+
+    $("#" + "Schedule-Card-" + 1).css('border', 'solid ' + Color_Code);
+
+}
 
 
 var Subject_List_Code_1 = "";
@@ -300,24 +323,7 @@ function SelectSubjectCode1() {
                 set_Color(parseInt(rs.rows.item(0).subject_code)); // 0 말고는 다른 값으로 바꾸지 마세요!!
                 console.log('적용된 색상 코드 : ' + Color_Code);
 
-                var html = "";
 
-                html += "<div class='card' id='Schedule-Card-" + 1 + "' style= 'margin: 30px; color:" + Color_Code + ";'>"
-                    + "<div class='content-block' style= 'padding-top: 30px; padding-bottom: 30px;'>"
-                    + "<p style='text-align: center; margin-bottom: -5px; margin-top: 10px;'>"
-                    + "<span>" + ((9) + "시 00분 ~ " + (9) + "시 50분") + "</span><br>"
-                    + "</p>"
-
-                    + "<h2 style='text-align: center; margin-top: -5px; margin-bottom: 5px;'>"
-                    + "<span id='Subject-Name-" + 1 + "'>" + Subject_List_Code_1 + "</span>"
-                    + "</h1>"
-                    + "</div>"
-                    + "</div>";
-
-                $$("#Today_Subject").show();
-                $$("#Today_Subject").append(html);
-
-                $("#" + "Schedule-Card-" + 1).css('border', 'solid ' + Color_Code);
             }
 
             console.log('조회 과목명 1 : ' + Subject_List_Code_1);
