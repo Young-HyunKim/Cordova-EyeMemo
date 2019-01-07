@@ -54,6 +54,9 @@ myApp.onPageInit("Register-Subject", function (page) {
 
                 console.log("PASS"+ (i+1));
 
+                localStorage.setItem("Subject_Code["+ i +"]",subject_code[i]);
+                localStorage.setItem("R_Subject_Name["+ i +"]",subject_name[i]);
+
                 console.log("subject_code[Content] : " + subject_code[i]);
                 console.log("Subject_name[Content] : " + subject_name[i]);
             }

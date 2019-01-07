@@ -35,85 +35,17 @@ myApp.onPageInit("Register-Subject", function (page) {
     
     $$('#S_save').on('click', function () {
         mainView.router.loadPage('Time.subject.html');
-       
-        //var k = 1;
         console.log(count);
 
         for (var i = 0; i < count; i++) {
             if(count == (i+1)){
                 ValueInput(count);
-                console.log("for PASS"+ (i+1));
+                console.log("for문 : PASS"+ (i+1));
             }
             
         }
 
-/*        
-        if(count == k){
-
-            ValueInput(count);
-            console.log("PASS"+ (k));
-
-        }else if(count == (k + 1)){
-            
-            ValueInput(count);
-            console.log("PASS"+ (k + 1));
-
-        }else if(count == (k + 2)){
-            
-            ValueInput(count); 
-            console.log("PASS"+ (k + 2));
-            
-        }else if(count == (k + 3)){
-           
-            ValueInput(count);
-            console.log("PASS"+ (k + 3));
-
-        }else if(count == (k + 4)){
-           
-            ValueInput(count);
-            console.log("PASS"+ (k + 4));
-
-        }else if(count == (k + 5)){
-            
-            ValueInput(count);
-            console.log("PASS"+ (k + 5));
-
-        }else if(count == (k + 6)){
-           
-            ValueInput(count);
-            console.log("PASS"+ (k + 6));
-
-        }else if(count == (k + 7)){
-            
-            ValueInput(count);
-            console.log("PASS"+ (k + 7));
-
-        }else if(count == (k + 8)){
-            
-            ValueInput(count);
-            console.log("PASS"+ (k + 8));
-
-        }else if(count == (k + 9)){
-            
-            ValueInput(count);
-            console.log("PASS"+ (k + 9));
-
-        }else if(count == (k + 10)){
-            
-            ValueInput(count);
-            console.log("PASS"+ (k + 10));
-
-        }else if(count == (k + 11)){
-            
-            ValueInput(count);
-            console.log("PASS"+ (k + 11));
-
-        }else{
-
-        }
-
-*/
-
+        
         function ValueInput(count){
            
             for (var i = 0; i < count; i++) {
@@ -121,6 +53,9 @@ myApp.onPageInit("Register-Subject", function (page) {
                 subject_name[i] = $$("#" + "Subject_" + (i+1)).val();
 
                 console.log("PASS"+ (i+1));
+
+                localStorage.setItem("Subject_Code["+ i +"]",subject_code[i]);
+                localStorage.setItem("R_Subject_Name["+ i +"]",subject_name[i]);
 
                 console.log("subject_code[Content] : " + subject_code[i]);
                 console.log("Subject_name[Content] : " + subject_name[i]);

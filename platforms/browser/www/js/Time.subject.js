@@ -48,87 +48,16 @@ myApp.onPageInit("Time-subject", function (page) {
    
 
     $$('#btn-Save').on('click', function () {
-        //var k = 1;
         console.log(count);
 
         for (var i = 0; i < count; i++) {
             if(count == (i+1)){
                 ValueInput(count);
-                console.log("for PASS"+ (i+1));
+                console.log("for문 : PASS"+ (i+1));
             }
             
         }
 
-/*
-        if(count == k){
-
-            ValueInput(count);
-            console.log("PASS"+ (k));
-
-        }else if(count == (k + 1)){
-            
-            ValueInput(count);
-            console.log("PASS"+ (k + 1));
-
-        }else if(count == (k + 2)){
-            
-            ValueInput(count); 
-            console.log("PASS"+ (k + 2));
-            
-        }else if(count == (k + 3)){
-           
-            ValueInput(count);
-            console.log("PASS"+ (k + 3));
-
-        }else if(count == (k + 4)){
-           
-            ValueInput(count);
-            console.log("PASS"+ (k + 4));
-
-        }else if(count == (k + 5)){
-            
-            ValueInput(count);
-            console.log("PASS"+ (k + 5));
-
-        }else if(count == (k + 6)){
-           
-            ValueInput(count);
-            console.log("PASS"+ (k + 6));
-
-        }else if(count == (k + 7)){
-            
-            ValueInput(count);
-            console.log("PASS"+ (k + 7));
-
-        }else if(count == (k + 8)){
-            
-            ValueInput(count);
-            console.log("PASS"+ (k + 8));
-
-        }else if(count == (k + 9)){
-            
-            ValueInput(count);
-            console.log("PASS"+ (k + 9));
-
-        }else if(count == (k + 10)){
-            
-            ValueInput(count);
-            console.log("PASS"+ (k + 10));
-
-        }else if(count == (k + 11)){
-            
-            ValueInput(count);
-            console.log("PASS"+ (k + 11));
-
-        }else if(count == (k + 12)){
-           
-            ValueInput(count);
-            console.log("PASS"+ (k + 12));
-
-        }else{
-
-        }
-*/
 
         function ValueInput(count){
            
@@ -137,6 +66,9 @@ myApp.onPageInit("Time-subject", function (page) {
                 tc_subject_name[i] = $$("#" + DayName + "_Subject_" + (i+1)).val();
 
                 console.log("PASS"+ (i+1));
+
+                localStorage.setItem("Time_Code["+ Week_Code +"]["+ i +"]",time_code[i]);
+                localStorage.setItem("T_Subject_Name["+ Week_Code +"]["+ i +"]",tc_subject_name[i]);
 
                 console.log("Time_code[Content] : " + time_code[i]);
                 console.log("Subject_name[Content] : " + tc_subject_name[i]);
