@@ -165,22 +165,6 @@ function showHomeTabsetting() {
 }
 
 
-
-$(document).ready(function () {
-    setInterval(SelectSubjectList, 5 * 1000);
-    setInterval(C_selectSuject, 1000);
-
-    if (IS_SubjectRegister == 1) {
-        log.console(IS_SubjectRegister)
-        var set_Subject_M = setInterval(C_selectSuject, 1000);
-    }
-});
-
-window.onbeforeunload = function () {
-    SelectSubjectList();
-};
-
-
 function C_selectSuject() {
     db.transaction(function (tr) {
         var C_DayCode = 0;
