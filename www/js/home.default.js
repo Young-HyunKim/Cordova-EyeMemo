@@ -180,8 +180,6 @@ window.onbeforeunload = function(){
     SelectSubjectList();
 };
 
-var set_Subject = setInterval(SelectSubjectList, 30*60*1000);
-
 
 function C_selectSuject() {
     db.transaction(function (tr) {
@@ -257,6 +255,16 @@ function Select_Notes() {
 var S_Code = "";
 var S_Name = "";
 var Color_Code = "";
+
+var Subject_List_Code = new Array();
+
+$(document).ready(function () {
+    for (var i = 0; i < Sub_Add_Limit ; i++) {
+        Subject_List_Code[i] = "";
+        console.log("Subject_List_Code : " + Subject_List_Code[i]);
+    }
+});
+
 
 var Subject_List_Code_1 = "";
 var Subject_List_Code_2 = "";
