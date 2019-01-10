@@ -140,7 +140,6 @@ myApp.onPageInit("home-default", function (page) {
 
 
 
-
 function showHomeTabSchedule() {
     $$("#btn_schedule").addClass('about-color').addClass('color-red');    //about-color : 탭 색상, color-brown : 탭 글자 색상
     $$("#btn_home").removeClass('about-color').removeClass('color-red');
@@ -173,60 +172,39 @@ function showHomeTabsetting() {
     $$("#btn_home").removeClass('about-color').removeClass('color-red');
 }
 
+$(document).ready(function () {
+   
+});
 
 function Current_SelectSubject() {
     
 };
 
-
-function Select_Notes() {
+function SelectNoteList(){
     $('#Note-Null').hide();
     $('#Pic-Null').hide();
-    db.transaction(function (tr) {
 
+    for (var i = 0; i < rs.rows.length; i++) {
+        $$("#Notes").show();
+        $$("#Subject-Note-" + i).remove(html);
 
-        var selectSQL = 'select notes, subject_name from Private_Storage where subject_name = ? ';
+        var html = "";
 
-        tr.executeSql(selectSQL, [N_Subject_Name], function (tr, rs) {
-            console.log(rs.rows.item(0).subject_name + " 노트 검색")
-            console.log("노트 내용 : " + rs.rows.item(0).notes)
-            console.log("검색 과목 : " + N_Subject_Name)
+        html += "<div class='card' id='Subject-Note-" + i + "' style= 'margin: 30px;'>"
+            + "<div class='content-block' style= 'padding-top: 20px; padding-bottom: 30px;'>"
+            + "<h3 style='text-align: center; margin-bottom: -5px; margin-top: 10px;'>"
+            + rs.rows.item(i).notes
+            + "</h3>"
+            + "</div>"
+            + "</div>";
 
+        $$("#Notes").show();
+        $$("#Notes").append(html);
 
-            for (var i = 0; i < rs.rows.length; i++) {
-                $$("#Notes").show();
-                $$("#Subject-Note-" + i).remove(html);
+        $("#Subject-Note-" + i).css('border', 'solid #E21830');
 
-                var html = "";
-
-                html += "<div class='card' id='Subject-Note-" + i + "' style= 'margin: 30px;'>"
-                    + "<div class='content-block' style= 'padding-top: 20px; padding-bottom: 30px;'>"
-                    + "<h3 style='text-align: center; margin-bottom: -5px; margin-top: 10px;'>"
-                    + rs.rows.item(i).notes
-                    + "</h3>"
-                    + "</div>"
-                    + "</div>";
-
-                $$("#Notes").show();
-                $$("#Notes").append(html);
-
-                $("#Subject-Note-" + i).css('border', 'solid #E21830');
-
-            }
-
-        }, function (tr, err) {
-            alert('DB오류 ' + err.message + err.code);
-        }
-        );
-    });
+    }
 }
-
-
-
-$(document).ready(function () {
-   
-});
-
 
 function SelectScheduleList() {
     var html = "";
@@ -252,7 +230,7 @@ function SelectScheduleList() {
 
 var Subject_List_Code = new Array();
 
-function set_Color(CDES) {
+function Set_Color(CDES) {
     switch (CDES) {
 
         case 1: Color_Code = '#FF0000';
