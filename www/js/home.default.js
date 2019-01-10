@@ -73,6 +73,7 @@ myApp.onPageInit("home-default", function (page) {
 
     $(document).ready(function () {
         CurrentDateTime();
+        setInterval(CurrentSubject,1000);
         setInterval(ContentSet, 1000);
     });
 
@@ -133,6 +134,12 @@ myApp.onPageInit("home-default", function (page) {
 
     }
 
+    function CurrentSubject(){
+        
+        var CS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + (NowTime.getHours() - 9) + "]");
+        $$("#C_Subject").text(CS);
+    }
+
     $$('#Search_Subject').on('click', function () {
         N_Subject_Name = $$("#keyword").val();
         console.log("검색 과목명 : " + N_Subject_Name);
@@ -162,7 +169,6 @@ myApp.onPageInit("home-default", function (page) {
     function Get_Subject() {
         for (let i = 0; i < Add_Limit; i++) {
             
-            let count = 0;
             var TS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + i + "]");
 
             if (TS != null) {
@@ -172,6 +178,7 @@ myApp.onPageInit("home-default", function (page) {
                     let Scan_TS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + r + "]");
                     let Scan_RS = localStorage.getItem("R_Subject_Name[" + i + "]");
 
+                    /*
                     if(Scan_TS != null){
                         console.log("Scan_RS : " + Scan_RS + " == " + TS + " : TS" );
 
@@ -180,7 +187,7 @@ myApp.onPageInit("home-default", function (page) {
                         }
 
                     }
-
+                    */
 
                 }
 
