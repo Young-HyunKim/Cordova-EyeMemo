@@ -3,7 +3,7 @@ var CDES_count = 0;
 var CurrentDate_WeekofDay = 0;
 var Temporary_Subject_Name = "";
 
-var Color_Code = "";
+var Color_Code = "#FF0000";
 
 var NowTime = new Date();
 var Subject_List_Code = new Array();
@@ -74,8 +74,8 @@ myApp.onPageInit("home-default", function (page) {
 
     $(document).ready(function () {
         CurrentDateTime();
-        setInterval(ContentSet,1000);
-     });
+        setInterval(ContentSet, 1000);
+    });
 
     function ContentSet() {
         var Today = new Date();
@@ -137,8 +137,52 @@ myApp.onPageInit("home-default", function (page) {
     $$('#Search_Subject').on('click', function () {
         N_Subject_Name = $$("#keyword").val();
         console.log("검색 과목명 : " + N_Subject_Name);
-        
+
     });
+
+    $(document).ready(function () {
+        Get_Subject();
+    });
+    
+    function Get_Subject() {
+        for (let i = 0; i < Add_Limit; i++) {
+    
+            var TS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + i + "]");
+    
+            if (TS != null) {
+                console.log("T_Subject_Name[" + NowTime.getDay() + "][" + i + "]" + ":" + TS);
+                Today_SubjectList(i + 1, i + 9, TS);
+            }
+    
+        }
+    
+    }
+    
+    function Today_SubjectList(Id_Number, Time_Code, Subject_Content) {
+        console.log(Id_Number, Time_Code, Subject_Content);
+    
+        var html = "";
+    
+        html += "<div class='card' id='Schedule-Card-" + Id_Number + "' style= 'margin: 30px; color:" + Color_Code + ";'>"
+            + "<div class='content-block' style= 'padding-top: 30px; padding-bottom: 30px;'>"
+            + "<p style='text-align: center; margin-bottom: -5px; margin-top: 10px;'>"
+            + "<span>" + ((Time_Code) + "시 00분 ~ " + (Time_Code) + "시 50분") + "</span><br>"
+            + "</p>"
+    
+            + "<h2 style='text-align: center; margin-top: -5px; margin-bottom: 5px;'>"
+            + "<span id='Subject-Name-" + Id_Number + "'>" + Subject_Content + "</span>"
+            + "</h1>"
+            + "</div>"
+            + "</div>";
+    
+        $$("#Today_Subjects").show();
+        $$("#Today_Subjects").append(html);
+    
+        $("#" + "Schedule-Card-" + Id_Number).css('border', 'solid ' + Color_Code);
+    
+        console.log(html);
+    }
+
 });
 
 
@@ -176,12 +220,11 @@ function showHomeTabsetting() {
 }
 
 
-
 function Current_SelectSubject() {
-    
+
 };
 
-function SelectNoteList(){
+function SelectNoteList() {
     $('#Note-Null').hide();
     $('#Pic-Null').hide();
 
@@ -207,32 +250,12 @@ function SelectNoteList(){
     }
 }
 
-function SelectScheduleList() {
-    var html = "";
 
-    html += "<div class='card' id='Schedule-Card-" + 1 + "' style= 'margin: 30px; color:" + Color_Code + ";'>"
-        + "<div class='content-block' style= 'padding-top: 30px; padding-bottom: 30px;'>"
-        + "<p style='text-align: center; margin-bottom: -5px; margin-top: 10px;'>"
-        + "<span>" + ((9) + "시 00분 ~ " + (9) + "시 50분") + "</span><br>"
-        + "</p>"
-
-        + "<h2 style='text-align: center; margin-top: -5px; margin-bottom: 5px;'>"
-        + "<span id='Subject-Name-" + 1 + "'>" + Subject_List_Code_1 + "</span>"
-        + "</h1>"
-        + "</div>"
-        + "</div>";
-
-    $$("#Today_Subject").show();
-    $$("#Today_Subject").append(html);
-
-    $("#" + "Schedule-Card-" + 1).css('border', 'solid ' + Color_Code);
-
-}
 
 var Subject_List_Code = new Array();
 
 function Set_Color(CDES) {
-    switch (CDES) {
+    switch (1) {
 
         case 1: Color_Code = '#FF0000';
             break;

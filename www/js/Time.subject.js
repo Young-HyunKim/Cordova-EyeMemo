@@ -43,7 +43,6 @@ myApp.onPageInit("Time-subject", function (page) {
     });
 
    
-
     $$('#btn-Save').on('click', function () {
         console.log(count);
 
