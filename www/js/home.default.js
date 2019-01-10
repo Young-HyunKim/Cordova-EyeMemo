@@ -10,10 +10,15 @@ var Color_Code = "";
 
 var Subject_List_Code = new Array();
 
+$(document).ready(function () {
+    for (var i = 0; i < Sub_Add_Limit; i++) {
+        Subject_List_Code[i] = "";
+        console.log("Subject_List_Code : " + Subject_List_Code[i]);
+    }
+});
+
 myApp.onPageInit("home-default", function (page) {
 
-    showHomeTabSchedule();
-    CurrentDateTime();
 
     $(document).ready(function () {
         $("#btn-table").css("margin", "0 auto");
@@ -69,8 +74,6 @@ myApp.onPageInit("home-default", function (page) {
         showHomeTabsetting();
     });
 
-
-    var set_CDT = setInterval(ContnetSet, 1000);
 
     function ContnetSet() {
         var Today = new Date();
@@ -171,30 +174,8 @@ function showHomeTabsetting() {
 }
 
 
-function C_selectSuject() {
-    db.transaction(function (tr) {
-        var C_DayCode = 0;
-        var C_Hours = 0;
-
-        var Today = new Date();
-
-        C_DayCode = Today.getDay().toString();
-        C_Hours = Today.getHours();
-
-
-        var selectSQL = 'select tc_subject_name from Schedule where week_code = ? and time_code = ? ';
-        tr.executeSql(selectSQL, [C_DayCode, C_Hours], function (tr, rs) {
-            console.log("현재 요일 : " + C_DayCode)
-            console.log("현재 시간 : " + C_Hours)
-            console.log("현재 과목 : " + rs.rows.item(0).tc_subject_name)
-            $$("#C_Subject").text(rs.rows.item(0).tc_subject_name);
-
-
-        }, function (tr, err) {
-            alert('DB오류 ' + err.message + err.code);
-        }
-        );
-    });
+function Current_SelectSubject() {
+    
 };
 
 
@@ -241,13 +222,6 @@ function Select_Notes() {
 }
 
 
-$(document).ready(function () {
-    for (var i = 0; i < Sub_Add_Limit; i++) {
-        Subject_List_Code[i] = "";
-        console.log("Subject_List_Code : " + Subject_List_Code[i]);
-    }
-});
-
 
 $(document).ready(function () {
    
@@ -276,22 +250,7 @@ function SelectScheduleList() {
 
 }
 
-
-var Subject_List_Code_1 = "";
-var Subject_List_Code_2 = "";
-var Subject_List_Code_3 = "";
-var Subject_List_Code_4 = "";
-var Subject_List_Code_5 = "";
-var Subject_List_Code_6 = "";
-var Subject_List_Code_7 = "";
-var Subject_List_Code_8 = "";
-var Subject_List_Code_9 = "";
-var Subject_List_Code_10 = "";
-var Subject_List_Code_11 = "";
-var Subject_List_Code_12 = "";
-var Subject_List_Code_13 = "";
-
-
+var Subject_List_Code = new Array();
 
 function set_Color(CDES) {
     switch (CDES) {
@@ -338,283 +297,3 @@ function set_Color(CDES) {
         default: Color_Code = "#fff";
     }
 }
-
-
-function SelectSubjectList() {
-    db.transaction(function (tr) {
-
-        var Today = new Date();
-        //var CD_WeekofDay = 0;
-        var DayCode = Today.getDay();
-
-
-        var SelectSQL = 'select tc_subject_name from Schedule where week_code = ?';
-        tr.executeSql(SelectSQL, [DayCode], function (tr, rs) {  // DayCode 변경 요망.
-            CDES_count = rs.rows.length;
-
-            console.log('요일 코드 : ' + DayCode);
-            console.log('과목 수 : ' + rs.rows.length);
-
-            switch (CDES_count) {
-                case 1: C_Execusion1();
-                    break;
-
-                case 2: C_Execusion2();
-                    break;
-
-                case 3: C_Execusion3();
-                    break;
-
-                case 4: C_Execusion4();
-                    break;
-
-                case 5: C_Execusion5();
-                    break;
-
-                case 6: C_Execusion6();
-                    break;
-
-                case 7: C_Execusion7();
-                    break;
-
-                case 8: C_Execusion8();
-                    break;
-
-                case 9: C_Execusion9();
-                    break;
-
-                case 10: C_Execusion10();
-                    break;
-
-                case 11: C_Execusion11();
-                    break;
-
-                case 12: C_Execusion12();
-                    break;
-
-                case 13: C_Execusion13();
-                    break;
-
-
-            }
-
-            function C_Execusion1() {
-                C_Input1();
-            }
-
-            function C_Execusion2() {
-                C_Input1();
-                C_Input2();
-            }
-
-            function C_Execusion3() {
-                C_Input1();
-                C_Input2();
-                C_Input3();
-            }
-
-            function C_Execusion4() {
-                C_Input1();
-                C_Input2();
-                C_Input3();
-                C_Input4();
-            }
-
-            function C_Execusion5() {
-                C_Input1();
-                C_Input2();
-                C_Input3();
-                C_Input4();
-                C_Input5();
-            }
-
-            function C_Execusion6() {
-                C_Input1();
-                C_Input2();
-                C_Input3();
-                C_Input4();
-                C_Input5();
-                C_Input6();
-            }
-
-            function C_Execusion7() {
-                C_Input1();
-                C_Input2();
-                C_Input3();
-                C_Input4();
-                C_Input5();
-                C_Input6();
-                C_Input7();
-            }
-
-            function C_Execusion8() {
-                C_Input1();
-                C_Input2();
-                C_Input3();
-                C_Input5();
-                C_Input6();
-                C_Input7();
-                C_Input8();
-            }
-
-            function C_Execusion9() {
-                C_Input1();
-                C_Input2();
-                C_Input3();
-                C_Input4();
-                C_Input5();
-                C_Input6();
-                C_Input7();
-                C_Input8();
-                C_Input9();
-            }
-
-            function C_Execusion10() {
-                C_Input1();
-                C_Input2();
-                C_Input3();
-                C_Input4();
-                C_Input5();
-                C_Input6();
-                C_Input7();
-                C_Input8();
-                C_Input9();
-                C_Input10();
-            }
-
-            function C_Execusion11() {
-                C_Input1();
-                C_Input2();
-                C_Input3();
-                C_Input4();
-                C_Input5();
-                C_Input6();
-                C_Input7();
-                C_Input8();
-                C_Input9();
-                C_Input10();
-                C_Input11();
-            }
-
-            function C_Execusion12() {
-                C_Input1();
-                C_Input2();
-                C_Input3();
-                C_Input4();
-                C_Input5();
-                C_Input6();
-                C_Input7();
-                C_Input8();
-                C_Input9();
-                C_Input10();
-                C_Input11();
-                C_Input12();
-            }
-
-            function C_Execusion13() {
-                C_Input1();
-                C_Input2();
-                C_Input3();
-                C_Input4();
-                C_Input5();
-                C_Input6();
-                C_Input7();
-                C_Input8();
-                C_Input9();
-                C_Input10();
-                C_Input11();
-                C_Input12();
-                C_Input13();
-            }
-
-
-
-            function C_Input1() {
-                Subject_List_Code_1 = (rs.rows.item(0).tc_subject_name);
-                console.log("SelectSubjectList() 과목명 : " + rs.rows.item(0).tc_subject_name);
-                SelectSubjectCode1();
-
-            }
-
-            function C_Input2() {
-                Subject_List_Code_2 = (rs.rows.item(1).tc_subject_name);
-                console.log("SelectSubjectList() 과목명 : " + rs.rows.item(1).tc_subject_name);
-                SelectSubjectCode2();
-            }
-
-            function C_Input3() {
-                Subject_List_Code_3 = (rs.rows.item(2).tc_subject_name);
-                console.log("SelectSubjectList() 과목명 : " + rs.rows.item(2).tc_subject_name);
-                SelectSubjectCode3();
-            }
-
-            function C_Input4() {
-                Subject_List_Code_4 = (rs.rows.item(3).tc_subject_name);
-                console.log("SelectSubjectList() 과목명 : " + rs.rows.item(3).tc_subject_name);
-                SelectSubjectCode4();
-            }
-
-            function C_Input5() {
-                Subject_List_Code_5 = (rs.rows.item(4).tc_subject_name);
-                console.log("SelectSubjectList() 과목명 : " + rs.rows.item(4).tc_subject_name);
-                SelectSubjectCode5();;
-            }
-
-            function C_Input6() {
-                Subject_List_Code_6 = (rs.rows.item(5).tc_subject_name);
-                console.log("SelectSubjectList() 과목명 : " + rs.rows.item(5).tc_subject_name);
-                SelectSubjectCode6();
-            }
-
-            function C_Input7() {
-                Subject_List_Code_7 = (rs.rows.item(6).tc_subject_name);
-                console.log("SelectSubjectList() 과목명 : " + rs.rows.item(6).tc_subject_name);
-                SelectSubjectCode7();
-            }
-
-            function C_Input8() {
-                Subject_List_Code_8 = (rs.rows.item(7).tc_subject_name);
-                console.log("SelectSubjectList() 과목명 : " + rs.rows.item(7).tc_subject_name);
-                SelectSubjectCode8();
-            }
-
-            function C_Input9() {
-                Subject_List_Code_9 = (rs.rows.item(8).tc_subject_name);
-                console.log("SelectSubjectList() 과목명 : " + rs.rows.item(8).tc_subject_name);
-                SelectSubjectCode9();
-            }
-
-            function C_Input10() {
-                Subject_List_Code_10 = (rs.rows.item(9).tc_subject_name);
-                console.log("SelectSubjectList() 과목명 : " + rs.rows.item(9).tc_subject_name);
-                SelectSubjectCode10();
-            }
-
-            function C_Input11() {
-                Subject_List_Code_11 = (rs.rows.item(10).tc_subject_name);
-                console.log("SelectSubjectList() 과목명 : " + rs.rows.item(10).tc_subject_name);
-                SelectSubjectCode11();;
-            }
-
-            function C_Input12() {
-                Subject_List_Code_12 = (rs.rows.item(11).tc_subject_name);
-                console.log("SelectSubjectList() 과목명 : " + rs.rows.item(11).tc_subject_name);
-                SelectSubjectCode12();
-            }
-
-            function C_Input13() {
-                Subject_List_Code_13 = (rs.rows.item(12).tc_subject_name);
-                console.log("SelectSubjectList() 과목명 : " + rs.rows.item(12).tc_subject_name);
-                SelectSubjectCode13();
-            }
-
-
-        }, function (tr, err) {
-            alert('DB오류 ' + err.message + err.code);
-        }
-        );
-
-
-    });
-}
-
