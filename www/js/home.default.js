@@ -1,11 +1,8 @@
-
 var count = 0;
 var CDES_count = 0;
 var CurrentDate_WeekofDay = 0;
 var Temporary_Subject_Name = "";
 
-var S_Code = "";
-var S_Name = "";
 var Color_Code = "";
 
 var NowTime = new Date();

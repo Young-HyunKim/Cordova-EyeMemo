@@ -1,11 +1,8 @@
-
 var count = 0;
 var CDES_count = 0;
 var CurrentDate_WeekofDay = 0;
 var Temporary_Subject_Name = "";
 
-var S_Code = "";
-var S_Name = "";
 var Color_Code = "";
 
 var NowTime = new Date();
@@ -77,10 +74,10 @@ myApp.onPageInit("home-default", function (page) {
 
     $(document).ready(function () {
         CurrentDateTime();
-        setInterval(ContnetSet,1000);
+        setInterval(ContentSet,1000);
      });
 
-    function ContnetSet() {
+    function ContentSet() {
         var Today = new Date();
         CurrentDate_WeekofDay = Today.getDay();
 
