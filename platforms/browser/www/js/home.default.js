@@ -1,13 +1,14 @@
-var NowTime = new Date();
+
 var count = 0;
 var CDES_count = 0;
-var CD_WeekofDay = 0;
+var CurrentDate_WeekofDay = 0;
 var Temporary_Subject_Name = "";
 
 var S_Code = "";
 var S_Name = "";
 var Color_Code = "";
 
+var NowTime = new Date();
 var Subject_List_Code = new Array();
 
 $(document).ready(function () {
@@ -23,7 +24,6 @@ myApp.onPageInit("home-default", function (page) {
     $(document).ready(function () {
         $("#btn-table").css("margin", "0 auto");
         $$("#Subject-Null").css('border', 'solid #E21830');
-
     });
 
 
@@ -75,37 +75,43 @@ myApp.onPageInit("home-default", function (page) {
     });
 
 
+    $(document).ready(function () {
+        CurrentDateTime();
+        setInterval(ContnetSet,1000);
+     });
+
     function ContnetSet() {
         var Today = new Date();
-        CD_WeekofDay = Today.getDay();
+        CurrentDate_WeekofDay = Today.getDay();
 
-        switch (CD_WeekofDay) {
-            case 1: CD_WeekofDay = '월요일';
+        switch (CurrentDate_WeekofDay) {
+            case 1: CurrentDate_WeekofDay = '월요일';
                 break;
 
-            case 2: CD_WeekofDay = '화요일';
+            case 2: CurrentDate_WeekofDay = '화요일';
                 break;
 
-            case 3: CD_WeekofDay = '수요일';
+            case 3: CurrentDate_WeekofDay = '수요일';
                 break;
 
-            case 4: CD_WeekofDay = '목요일';
+            case 4: CurrentDate_WeekofDay = '목요일';
                 break;
 
-            case 5: CD_WeekofDay = '금요일';
+            case 5: CurrentDate_WeekofDay = '금요일';
                 break;
 
-            case 6: CD_WeekofDay = '토요일';
+            case 6: CurrentDate_WeekofDay = '토요일';
                 break;
 
-            case 0: CD_WeekofDay = '일요일';
+            case 0: CurrentDate_WeekofDay = '일요일';
                 break;
 
         }
 
-        $$("#CurrentWeekOfDay").text(" " + CD_WeekofDay);
+        $$("#CurrentWeekOfDay").text(" " + CurrentDate_WeekofDay);
         $$("#CurrentDate").text(Today.toLocaleDateString());
         $$("#CurrentTime").text(Today.toLocaleTimeString());
+
     }
 
 
@@ -172,9 +178,7 @@ function showHomeTabsetting() {
     $$("#btn_home").removeClass('about-color').removeClass('color-red');
 }
 
-$(document).ready(function () {
-   
-});
+
 
 function Current_SelectSubject() {
     
