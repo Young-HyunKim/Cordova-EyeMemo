@@ -2,7 +2,7 @@ var NowTime = new Date();
 var count = 0;
 var CDES_count = 0;
 var CD_WeekofDay = 0;
-var N_Subject_Name = "의학용어";
+var Temporary_Subject_Name = "";
 
 var S_Code = "";
 var S_Name = "";
@@ -134,7 +134,7 @@ myApp.onPageInit("home-default", function (page) {
     $$('#Search_Subject').on('click', function () {
         N_Subject_Name = $$("#keyword").val();
         console.log("검색 과목명 : " + N_Subject_Name);
-        Select_Notes();
+        
     });
 });
 
