@@ -7,7 +7,6 @@ var subject_name = new Array();
 myApp.onPageInit("Register-Subject", function (page) {
 
     var count = 0;
-    var IndexTemp = 0;
 
     $(document).ready(function () {
 

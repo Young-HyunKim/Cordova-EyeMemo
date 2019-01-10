@@ -38,11 +38,8 @@ myApp.onPageInit("Time-subject", function (page) {
 
     $$('#btn-Save').on('click', function () {
         mainView.router.loadPage('home.default.html');
-        SelectSubjectList();
         $('#Subject-Null').hide();
-        
-        IS_SubjectRegister = 1;
-
+    
     });
 
    
