@@ -2,8 +2,7 @@ var count = 0;
 var CDES_count = 0;
 var CurrentDate_WeekofDay = 0;
 var Temporary_Subject_Name = "";
-
-var Color_Code = "#FF0000";
+var Color_Code = "";
 
 var NowTime = new Date();
 var Subject_List_Code = new Array();
@@ -148,10 +147,30 @@ myApp.onPageInit("home-default", function (page) {
         for (let i = 0; i < Add_Limit; i++) {
     
             var TS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + i + "]");
-    
+
             if (TS != null) {
-                console.log("T_Subject_Name[" + NowTime.getDay() + "][" + i + "]" + ":" + TS);
+                
+                for (let r = 0; r < Add_Limit; r++) {
+                    
+                    let Scan_TS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + r + "]");
+                    let Scan_RS = localStorage.getItem("R_Subject_Name[" + i + "]");
+
+                    if(Scan_TS != null){
+                        console.log("Scan_RS : " + Scan_RS + " == " + TS + " : TS" );
+
+                        if(localStorage.getItem("R_Subject_Name[" + r + "]") == TS){
+                            Set_Color(r);
+                        }
+
+                    }
+
+
+                }
+                
                 Today_SubjectList(i + 1, i + 9, TS);
+
+            }else{
+
             }
     
         }
@@ -180,7 +199,7 @@ myApp.onPageInit("home-default", function (page) {
     
         $("#" + "Schedule-Card-" + Id_Number).css('border', 'solid ' + Color_Code);
     
-        console.log(html);
+        //console.log(html);
     }
 
 });
@@ -251,11 +270,12 @@ function SelectNoteList() {
 }
 
 
-
 var Subject_List_Code = new Array();
 
-function Set_Color(CDES) {
-    switch (1) {
+function Set_Color(Color_Number) {
+    console.log("Color_Number : "+Color_Number);
+
+    switch (Color_Number) {
 
         case 1: Color_Code = '#FF0000';
             break;
