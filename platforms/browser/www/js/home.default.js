@@ -139,13 +139,30 @@ myApp.onPageInit("home-default", function (page) {
 
     });
 
+    function Null_Schedule(){
+        var html = "";
+
+        html +="<div class='card' id='Subject-Null' style= ' margin: 30px;'>"
+             +"<div class='content-block' style='padding-top: 10px; padding-bottom: 10px;'>"
+             +"<p style='text-align: center;'> <img id='NN' style='width: 30%; height: 30%;' src='img/outline_notification_important_black_48.png'></p>"
+             +"<h2 style='text-align: center; margin-bottom: -5px; margin-top: 10px;'> 강의 일정이없습니다.</h2>"
+             +"</div>"
+             +"</div>"
+
+        $$("#Today_Subjects").show();
+        $$("#Today_Subjects").append(html);     
+                        
+    }
+
+
     $(document).ready(function () {
         Get_Subject();
     });
     
     function Get_Subject() {
         for (let i = 0; i < Add_Limit; i++) {
-    
+            
+            let count = 0;
             var TS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + i + "]");
 
             if (TS != null) {
@@ -166,7 +183,7 @@ myApp.onPageInit("home-default", function (page) {
 
 
                 }
-                
+
                 Today_SubjectList(i + 1, i + 9, TS);
 
             }else{
