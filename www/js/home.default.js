@@ -152,7 +152,7 @@ myApp.onPageInit("home-default", function (page) {
         html +="<div class='card' id='Subject-Null' style= ' margin: 30px;'>"
              +"<div class='content-block' style='padding-top: 10px; padding-bottom: 10px;'>"
              +"<p style='text-align: center;'> <img id='NN' style='width: 30%; height: 30%;' src='img/outline_notification_important_black_48.png'></p>"
-             +"<h2 style='text-align: center; margin-bottom: -5px; margin-top: 10px;'> 강의 일정이없습니다.</h2>"
+             +"<h2 style='text-align: center; margin-bottom: -5px; margin-top: 10px;'> 강의 일정이 없습니다.</h2>"
              +"</div>"
              +"</div>"
 
