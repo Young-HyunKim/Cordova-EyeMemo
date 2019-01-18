@@ -137,7 +137,13 @@ myApp.onPageInit("home-default", function (page) {
     function CurrentSubject(){
         
         var CS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + (NowTime.getHours() - 9) + "]");
-        $$("#C_Subject").text(CS);
+        
+        if(CS == ""){
+            $$("#C_Subject").text(CS);
+        }else{
+            $$("#C_Subject").text("수업이 없습니다!");
+        }
+        
     }
 
     $$('#Search_Subject').on('click', function () {
@@ -161,9 +167,28 @@ myApp.onPageInit("home-default", function (page) {
                         
     }
 
+    function Null_Notes(){
+        var html = "";
+
+        html +="<div class='card' id='Note-Null' style=' margin: 30px; border-color : crimson'>"
+             +"<div class='content-block' style='padding-top: 10px; padding-bottom: 10px;'>"
+             +"<p style='text-align: center;'>"
+             +"<img id='NN' style='width: 30%; height: 30%;' src='img/baseline_note_black_48.png'>"
+             +"</p>"
+             +"<h2 style='text-align: center; margin-bottom: -5px; margin-top: 10px;'> 메모가 없습니다.</h2>"
+             +"</div>"
+             +"</div>"
+
+        $$("#Notes").show();
+        $$("#Notes").append(html);
+        $("Note-Null").css('border', 'solid #E21830');
+        
+    }
+
 
     $(document).ready(function () {
         Get_Subject();
+        Null_Notes();
     });
     
     function Get_Subject() {
