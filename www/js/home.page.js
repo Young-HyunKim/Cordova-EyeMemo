@@ -14,7 +14,7 @@ $(document).ready(function () {
     }
 });
 
-myApp.onPageInit("home-default", function (page) {
+myApp.onPageInit("home-page", function (page) {
 
 
     $(document).ready(function () {
