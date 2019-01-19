@@ -1,18 +1,20 @@
 var Note_Content = "";
-var Note_SubjectName = "수업 이외";
+var Note_Default = "수업 이외";
 
 myApp.onPageInit("Note", function (page) {
 
     $$('#note_save').on('click', function () {
-        Note_Content = $$("#content").val();
-        selectSuject_Name();
-        Note_SubjectName = $$("#C_Subject").val();
-
-        console.log("현재 과목명 : " + Note_SubjectName );
-        console.log("노트 내용 : " + Note_Content );
-
-        insertNote();
-        mainView.router.loadPage('home.default.html');
+        
+        Note_Content = $$("#content").val();       
+        var CS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + (NowTime.getHours() - 9) + "]");
+        
+        if(CS == ""){
+            localStorage.setItem(Note_Default,Note_Content);
+        }else{
+            localStorage.setItem(CS,Note_Content);
+        }
+        
+        mainView.router.loadPage('home.page.html');
     });
 
 
