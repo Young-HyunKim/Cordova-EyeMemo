@@ -37,7 +37,7 @@ myApp.onPageInit("Time-subject", function (page) {
 
 
     $$('#btn-Save').on('click', function () {
-        mainView.router.loadPage('home.default.html');
+        mainView.router.loadPage('home.page.html');
         $('#Subject-Null').hide();
     
     });

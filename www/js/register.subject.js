@@ -27,7 +27,7 @@ myApp.onPageInit("Register-Subject", function (page) {
     });
 
     $$('#back').on('click', function () {
-        mainView.router.loadPage('home.default.html');
+        mainView.router.loadPage('home.page.html');
     });
     
     
