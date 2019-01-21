@@ -5,7 +5,8 @@ myApp.onPageInit("Note", function (page) {
 
     $$('#note_save').on('click', function () {
         
-        Note_Content = $$("#content").val();       
+        Note_Content = $$("keyword").val();
+        console.log("Note_Content : "+Note_Content)       
         var CS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + (NowTime.getHours() - 9) + "]");
         
         if(CS == ""){
