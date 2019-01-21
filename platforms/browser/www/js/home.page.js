@@ -27,12 +27,14 @@ myApp.onPageInit("home-page", function (page) {
     $("#note").css("margin", "0 auto");
     $("#scanner").css("margin", "0 auto");
     $("#timer").css("margin", "0 auto");
+    
 
     $("#Subject-Null").css('border', 'solid #E21830');
     $("#Note-Null").css('border', 'solid #E21830');
     $("#Pic-Null").css('border', 'solid #E21830');
 
-
+    
+/*
     $('#Note_List').slimScroll({
         height: '280px'
     });
@@ -40,6 +42,9 @@ myApp.onPageInit("home-page", function (page) {
     $('#Pic_List').slimScroll({
         height: '210px'
     });
+
+    
+*/
 
     $('#MediaList').slimScroll({
         height: '360px'
@@ -147,10 +152,28 @@ myApp.onPageInit("home-page", function (page) {
     }
 
     $$('#Search_Subject').on('click', function () {
-        N_Subject_Name = $$("#keyword").val();
-        console.log("검색 과목명 : " + N_Subject_Name);
-
+        var Sub_Name = $$("#keyword").val();
+        var Sub_Note = localStorage.getItem(Sub_Name);
+        
+        //Select_Notes(Sub_Note);
     });
+
+    function Select_Notes(Note_Content){
+        var html = "";
+        
+        html += "<div class='card' id='Subject-Note-" + i + "' style= 'margin: 30px;'>"
+            + "<div class='content-block' style= 'padding-top: 20px; padding-bottom: 30px;'>"
+            + "<h3 style='text-align: center; margin-bottom: -5px; margin-top: 10px;'>"
+            + rs.rows.item(i).notes
+            + "</h3>"
+            + "</div>"
+            + "</div>";
+           
+        $$("#Notes").show();
+        $$("#Notes").append(html);
+
+        $("#Subject-Note-"+ i ).css('border', 'solid #E21830');
+    }
 
     function Null_Schedule(){
         var html = "";

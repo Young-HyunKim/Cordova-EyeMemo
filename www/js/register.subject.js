@@ -25,11 +25,12 @@ myApp.onPageInit("Register-Subject", function (page) {
     $('#Subject_List').slimScroll({
         height: '360px'
     });
-
+    
+    /*
     $$('#back').on('click', function () {
         mainView.router.loadPage('home.page.html');
     });
-    
+    */
     
     $$('#S_save').on('click', function () {
         mainView.router.loadPage('Time.subject.html');

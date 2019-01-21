@@ -27,7 +27,7 @@ $$(document).on('deviceready', function() {
     
     // 로그인 상태 확인
     if ( isChecked ) {
-        mainView.router.loadPage('home.default.html');
+        mainView.router.loadPage('home.page.html');
     } else {
         mainView.router.loadPage('login.html');
     }
