@@ -9,7 +9,17 @@
   "installed_plugins": {
     "cordova-plugin-mobile-ocr": {
       "PACKAGE_NAME": "org.devgirl.framework7.mediaexplorer"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "org.devgirl.framework7.mediaexplorer"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "org.devgirl.framework7.mediaexplorer"
     }
   },
-  "dependent_plugins": {}
+  "dependent_plugins": {
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "org.devgirl.framework7.mediaexplorer"
+    }
+  }
 }
