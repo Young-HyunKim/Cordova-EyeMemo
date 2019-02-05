@@ -1,29 +1,40 @@
 -- Merging decision tree log ---
+provider#org.apache.cordova.camera.FileProvider
+INJECTED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:12:9-14:20
+	android:grantUriPermissions
+		ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:12:92-126
+	android:authorities
+		INJECTED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:12:19-66
+	android:exported
+		ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:12:67-91
+	android:name
+		ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:12:127-180
 manifest
-ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:2:1-17:12
-INJECTED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:2:1-17:12
-INJECTED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:2:1-17:12
-INJECTED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:2:1-17:12
+ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:2:1-20:12
+INJECTED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:2:1-20:12
+INJECTED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:2:1-20:12
+INJECTED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:2:1-20:12
 MERGED from [com.google.android.gms:play-services-vision:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-11.6.2.aar\4bc3c40119fa0bd38730e7bb4ad71e83\AndroidManifest.xml:2:1-5:12
-MERGED from [:CordovaLib] C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:20:1-27:12
 MERGED from [com.google.android.gms:play-services-vision-common:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-11.6.2.aar\546f19eddf6cb94ae6eb8a447d3c39ee\AndroidManifest.xml:2:1-5:12
 MERGED from [com.google.android.gms:play-services-base:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-base-11.6.2.aar\807823974c033df773c0cc17c57a49d0\AndroidManifest.xml:16:1-21:12
 MERGED from [com.google.android.gms:play-services-tasks:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.6.2.aar\0308fdc1207b549560a2e07e6e0c6916\AndroidManifest.xml:2:1-5:12
 MERGED from [com.google.android.gms:play-services-basement:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.6.2.aar\5b2d061e265d867f53631bbb8b11f1c1\AndroidManifest.xml:16:1-23:12
-MERGED from [com.google.android.gms:play-services-vision-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-license-11.6.2.aar\7c4bbb1bf44e4a355892e1bcea71ac2e\AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.android.gms:play-services-base-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.6.2.aar\04e92a2a21dba5cb52e794bcca916659\AndroidManifest.xml:2:1-6:12
 MERGED from [com.android.support:support-v4:25.2.0] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\2dc9e1bfc27d8ac293e6bfd4b47bcc1d\AndroidManifest.xml:17:1-27:12
-MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.6.2.aar\1f84d8c0d39d57c7a8b5e5297b35d71d\AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.android.gms:play-services-vision-common-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-license-11.6.2.aar\dce716f8698ac90c1854ec562295062f\AndroidManifest.xml:2:1-6:12
-MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.6.2.aar\14eec0eeb8ae4a7a725123273ecf7cd3\AndroidManifest.xml:2:1-6:12
+MERGED from [:CordovaLib] C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:20:1-27:12
+MERGED from [com.google.android.gms:play-services-vision-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-license-11.6.2.aar\7c4bbb1bf44e4a355892e1bcea71ac2e\AndroidManifest.xml:2:1-6:12
 MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\7bf90539faf9b4ba2758c3fdde6202a5\AndroidManifest.xml:17:1-27:12
 MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\c003a0a3f41af1eb0b28641cda2fd44f\AndroidManifest.xml:17:1-27:12
 MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.2.0.aar\ffd17780891b9ea9620a96a8fd6a5abc\AndroidManifest.xml:17:1-27:12
 MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.2.0.aar\3352010c1386d17b22ecf8bfa986eade\AndroidManifest.xml:17:1-27:12
 MERGED from [com.android.support:support-compat:25.2.0] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\02d9b6a58120ab97a257d9bff28b2ca5\AndroidManifest.xml:17:1-27:12
-INJECTED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:2:1-17:12
-INJECTED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:2:1-17:12
-INJECTED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:2:1-17:12
+MERGED from [com.google.android.gms:play-services-base-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.6.2.aar\04e92a2a21dba5cb52e794bcca916659\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.6.2.aar\1f84d8c0d39d57c7a8b5e5297b35d71d\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-vision-common-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-license-11.6.2.aar\dce716f8698ac90c1854ec562295062f\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.6.2.aar\14eec0eeb8ae4a7a725123273ecf7cd3\AndroidManifest.xml:2:1-6:12
+INJECTED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:2:1-20:12
+INJECTED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:2:1-20:12
+INJECTED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:2:1-20:12
 	package
 		ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:2:102-148
 		INJECTED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml
@@ -59,7 +70,7 @@ ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\Andro
 	android:name
 		ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:4:22-64
 application
-ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:5:5-12:19
+ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:5:5-15:19
 MERGED from [com.google.android.gms:play-services-vision:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-11.6.2.aar\4bc3c40119fa0bd38730e7bb4ad71e83\AndroidManifest.xml:4:5-19
 MERGED from [com.google.android.gms:play-services-vision:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-11.6.2.aar\4bc3c40119fa0bd38730e7bb4ad71e83\AndroidManifest.xml:4:5-19
 MERGED from [com.google.android.gms:play-services-vision-common:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-11.6.2.aar\546f19eddf6cb94ae6eb8a447d3c39ee\AndroidManifest.xml:4:5-19
@@ -70,18 +81,10 @@ MERGED from [com.google.android.gms:play-services-tasks:11.6.2] C:\Users\INA\.gr
 MERGED from [com.google.android.gms:play-services-tasks:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.6.2.aar\0308fdc1207b549560a2e07e6e0c6916\AndroidManifest.xml:4:5-19
 MERGED from [com.google.android.gms:play-services-basement:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.6.2.aar\5b2d061e265d867f53631bbb8b11f1c1\AndroidManifest.xml:19:5-21:19
 MERGED from [com.google.android.gms:play-services-basement:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.6.2.aar\5b2d061e265d867f53631bbb8b11f1c1\AndroidManifest.xml:19:5-21:19
-MERGED from [com.google.android.gms:play-services-vision-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-license-11.6.2.aar\7c4bbb1bf44e4a355892e1bcea71ac2e\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-vision-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-license-11.6.2.aar\7c4bbb1bf44e4a355892e1bcea71ac2e\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-base-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.6.2.aar\04e92a2a21dba5cb52e794bcca916659\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-base-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.6.2.aar\04e92a2a21dba5cb52e794bcca916659\AndroidManifest.xml:5:5-20
 MERGED from [com.android.support:support-v4:25.2.0] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\2dc9e1bfc27d8ac293e6bfd4b47bcc1d\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-v4:25.2.0] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\2dc9e1bfc27d8ac293e6bfd4b47bcc1d\AndroidManifest.xml:25:5-20
-MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.6.2.aar\1f84d8c0d39d57c7a8b5e5297b35d71d\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.6.2.aar\1f84d8c0d39d57c7a8b5e5297b35d71d\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-vision-common-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-license-11.6.2.aar\dce716f8698ac90c1854ec562295062f\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-vision-common-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-license-11.6.2.aar\dce716f8698ac90c1854ec562295062f\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.6.2.aar\14eec0eeb8ae4a7a725123273ecf7cd3\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.6.2.aar\14eec0eeb8ae4a7a725123273ecf7cd3\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-vision-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-license-11.6.2.aar\7c4bbb1bf44e4a355892e1bcea71ac2e\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-vision-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-license-11.6.2.aar\7c4bbb1bf44e4a355892e1bcea71ac2e\AndroidManifest.xml:5:5-20
 MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\7bf90539faf9b4ba2758c3fdde6202a5\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\7bf90539faf9b4ba2758c3fdde6202a5\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\c003a0a3f41af1eb0b28641cda2fd44f\AndroidManifest.xml:25:5-20
@@ -92,6 +95,14 @@ MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\INA\.gradle\ca
 MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.2.0.aar\3352010c1386d17b22ecf8bfa986eade\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-compat:25.2.0] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\02d9b6a58120ab97a257d9bff28b2ca5\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-compat:25.2.0] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\02d9b6a58120ab97a257d9bff28b2ca5\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-base-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.6.2.aar\04e92a2a21dba5cb52e794bcca916659\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-base-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.6.2.aar\04e92a2a21dba5cb52e794bcca916659\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.6.2.aar\1f84d8c0d39d57c7a8b5e5297b35d71d\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.6.2.aar\1f84d8c0d39d57c7a8b5e5297b35d71d\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-vision-common-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-license-11.6.2.aar\dce716f8698ac90c1854ec562295062f\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-vision-common-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-license-11.6.2.aar\dce716f8698ac90c1854ec562295062f\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.6.2.aar\14eec0eeb8ae4a7a725123273ecf7cd3\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.6.2.aar\14eec0eeb8ae4a7a725123273ecf7cd3\AndroidManifest.xml:5:5-20
 	android:supportsRtl
 		ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:5:114-140
 	android:label
@@ -127,11 +138,9 @@ ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\Andro
 	android:name
 		ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:9:27-74
 uses-sdk
-ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:13:5-74
+ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:16:5-74
 MERGED from [com.google.android.gms:play-services-vision:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-11.6.2.aar\4bc3c40119fa0bd38730e7bb4ad71e83\AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-vision:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-11.6.2.aar\4bc3c40119fa0bd38730e7bb4ad71e83\AndroidManifest.xml:3:5-43
-MERGED from [:CordovaLib] C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:25:5-44
-MERGED from [:CordovaLib] C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:25:5-44
 MERGED from [com.google.android.gms:play-services-vision-common:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-11.6.2.aar\546f19eddf6cb94ae6eb8a447d3c39ee\AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-vision-common:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-11.6.2.aar\546f19eddf6cb94ae6eb8a447d3c39ee\AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-base:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-base-11.6.2.aar\807823974c033df773c0cc17c57a49d0\AndroidManifest.xml:17:5-43
@@ -140,18 +149,12 @@ MERGED from [com.google.android.gms:play-services-tasks:11.6.2] C:\Users\INA\.gr
 MERGED from [com.google.android.gms:play-services-tasks:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.6.2.aar\0308fdc1207b549560a2e07e6e0c6916\AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-basement:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.6.2.aar\5b2d061e265d867f53631bbb8b11f1c1\AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-basement:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.6.2.aar\5b2d061e265d867f53631bbb8b11f1c1\AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-vision-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-license-11.6.2.aar\7c4bbb1bf44e4a355892e1bcea71ac2e\AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-vision-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-license-11.6.2.aar\7c4bbb1bf44e4a355892e1bcea71ac2e\AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-base-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.6.2.aar\04e92a2a21dba5cb52e794bcca916659\AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-base-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.6.2.aar\04e92a2a21dba5cb52e794bcca916659\AndroidManifest.xml:4:5-43
 MERGED from [com.android.support:support-v4:25.2.0] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\2dc9e1bfc27d8ac293e6bfd4b47bcc1d\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-v4:25.2.0] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\2dc9e1bfc27d8ac293e6bfd4b47bcc1d\AndroidManifest.xml:21:5-23:54
-MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.6.2.aar\1f84d8c0d39d57c7a8b5e5297b35d71d\AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.6.2.aar\1f84d8c0d39d57c7a8b5e5297b35d71d\AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-vision-common-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-license-11.6.2.aar\dce716f8698ac90c1854ec562295062f\AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-vision-common-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-license-11.6.2.aar\dce716f8698ac90c1854ec562295062f\AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.6.2.aar\14eec0eeb8ae4a7a725123273ecf7cd3\AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.6.2.aar\14eec0eeb8ae4a7a725123273ecf7cd3\AndroidManifest.xml:4:5-43
+MERGED from [:CordovaLib] C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:25:5-44
+MERGED from [:CordovaLib] C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\CordovaLib\build\intermediates\manifests\full\debug\AndroidManifest.xml:25:5-44
+MERGED from [com.google.android.gms:play-services-vision-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-license-11.6.2.aar\7c4bbb1bf44e4a355892e1bcea71ac2e\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-vision-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-license-11.6.2.aar\7c4bbb1bf44e4a355892e1bcea71ac2e\AndroidManifest.xml:4:5-43
 MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\7bf90539faf9b4ba2758c3fdde6202a5\AndroidManifest.xml:21:5-23:60
 MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\7bf90539faf9b4ba2758c3fdde6202a5\AndroidManifest.xml:21:5-23:60
 MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\c003a0a3f41af1eb0b28641cda2fd44f\AndroidManifest.xml:21:5-23:63
@@ -162,26 +165,40 @@ MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\INA\.gradle\ca
 MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.2.0.aar\3352010c1386d17b22ecf8bfa986eade\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-compat:25.2.0] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\02d9b6a58120ab97a257d9bff28b2ca5\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-compat:25.2.0] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\02d9b6a58120ab97a257d9bff28b2ca5\AndroidManifest.xml:21:5-23:58
+MERGED from [com.google.android.gms:play-services-base-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.6.2.aar\04e92a2a21dba5cb52e794bcca916659\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-base-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-base-license-11.6.2.aar\04e92a2a21dba5cb52e794bcca916659\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.6.2.aar\1f84d8c0d39d57c7a8b5e5297b35d71d\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-basement-license-11.6.2.aar\1f84d8c0d39d57c7a8b5e5297b35d71d\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-vision-common-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-license-11.6.2.aar\dce716f8698ac90c1854ec562295062f\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-vision-common-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-license-11.6.2.aar\dce716f8698ac90c1854ec562295062f\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.6.2.aar\14eec0eeb8ae4a7a725123273ecf7cd3\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks-license:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-11.6.2.aar\14eec0eeb8ae4a7a725123273ecf7cd3\AndroidManifest.xml:4:5-43
 	tools:overrideLibrary
 		ADDED from [com.android.support:support-v4:25.2.0] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\2dc9e1bfc27d8ac293e6bfd4b47bcc1d\AndroidManifest.xml:23:9-51
 	android:targetSdkVersion
-		ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:13:42-71
+		ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:16:42-71
 	android:minSdkVersion
-		ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:13:15-41
+		ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:16:15-41
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:14:5-81
+ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:17:5-81
 	android:name
-		ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:14:22-78
+		ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:17:22-78
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:15:5-80
+ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:18:5-80
 	android:name
-		ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:15:22-77
+		ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:18:22-77
 meta-data#com.google.android.gms.vision.DEPENDENCIES
-ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:16:5-96
+ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:19:5-96
 	android:value
-		ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:16:74-93
+		ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:19:74-93
 	android:name
-		ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:16:16-73
+		ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:19:16-73
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:13:13-123
+	android:resource
+		ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:13:75-120
+	android:name
+		ADDED from C:\Users\INA\Desktop\Dev\EyeMemo\platforms\android\app\src\main\AndroidManifest.xml:13:24-74
 activity#com.google.android.gms.common.api.GoogleApiActivity
 ADDED from [com.google.android.gms:play-services-base:11.6.2] C:\Users\INA\.gradle\caches\transforms-1\files-1.1\play-services-base-11.6.2.aar\807823974c033df773c0cc17c57a49d0\AndroidManifest.xml:19:9-172
 	android:exported

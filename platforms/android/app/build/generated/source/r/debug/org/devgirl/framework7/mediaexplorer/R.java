@@ -285,6 +285,7 @@ public final class R {
     public static final int SignInButton_scopeUris=2;
   }
   public static final class xml {
-    public static final int config=0x7f090000;
+    public static final int camera_provider_paths=0x7f090000;
+    public static final int config=0x7f090001;
   }
 }
