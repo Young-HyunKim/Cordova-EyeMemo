@@ -4,12 +4,16 @@ myApp.onPageInit("Camera", function (page) {
     function TakePicture() {
         navigator.camera.getPicture(onSuccess, onFail, {
             quality: 50,
-            destinationType: Camera.DestinationType.DATA_URL
+            destinationType: Camera.DestinationType.DATA_URL,
+            allowEdit: false,
+            correctOrientation: true,
+            saveToPhotoAlbum : true
         });
 
         function onSuccess(imageData) {
             var image = document.getElementById('Pic_Image');
             image.src = "data:image/jpeg;base64," + imageData;
+            
         }
 
         function onFail(message) {
@@ -17,12 +21,19 @@ myApp.onPageInit("Camera", function (page) {
         }
     }
 
-    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-        destinationType: Camera.DestinationType.FILE_URI });
-    
+    navigator.camera.getPicture(onSuccess, onFail, { 
+        quality: 50,
+        destinationType: Camera.DestinationType.DATA_URL,
+        allowEdit: false,
+        correctOrientation: true,
+        saveToPhotoAlbum: true,
+        
+    });
+        
     function onSuccess(imageURI) {
-        var image = document.getElementById('myImage');
+        var image = document.getElementById('Pic_Image');
         image.src = imageURI;
+        mainView.router.loadPage('home.page.html');
     }
     
     function onFail(message) {

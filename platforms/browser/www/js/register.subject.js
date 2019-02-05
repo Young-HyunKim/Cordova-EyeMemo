@@ -9,7 +9,7 @@ myApp.onPageInit("Register-Subject", function (page) {
     var count = 0;
 
     $(document).ready(function () {
-
+        mainView.router.loadPage('Time.subject.html');
         for (var i = 0; i < Sub_Add_Limit ; i++) {
             subject_code[i] = "";
             console.log("SubjectCode : " + subject_code[i]);
@@ -53,8 +53,8 @@ myApp.onPageInit("Register-Subject", function (page) {
 
                 console.log("PASS"+ (i+1));
 
-                localStorage.setItem("Subject_Code["+ i +"]",subject_code[i]);
-                localStorage.setItem("R_Subject_Name["+ i +"]",subject_name[i]);
+                window.localStorage.setItem("Subject_Code["+ i +"]",subject_code[i]);
+                window.localStorage.setItem("R_Subject_Name["+ i +"]",subject_name[i]);
 
                 console.log("subject_code[Content] : " + subject_code[i]);
                 console.log("Subject_name[Content] : " + subject_name[i]);

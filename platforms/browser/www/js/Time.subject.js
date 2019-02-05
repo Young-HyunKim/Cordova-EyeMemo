@@ -63,8 +63,8 @@ myApp.onPageInit("Time-subject", function (page) {
 
                 console.log("PASS"+ (i+1));
 
-                localStorage.setItem("Time_Code["+ Week_Code +"]["+ i +"]",time_code[i]);
-                localStorage.setItem("T_Subject_Name["+ Week_Code +"]["+ i +"]",tc_subject_name[i]);
+                window.localStorage.setItem("Time_Code["+ Week_Code +"]["+ i +"]",time_code[i]);
+                window.localStorage.setItem("T_Subject_Name["+ Week_Code +"]["+ i +"]",tc_subject_name[i]);
 
                 console.log("Time_code[Content] : " + time_code[i]);
                 console.log("Subject_name[Content] : " + tc_subject_name[i]);
