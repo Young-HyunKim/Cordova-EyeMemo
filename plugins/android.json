@@ -15,11 +15,10 @@
     },
     "cordova-plugin-file-transfer": {
       "PACKAGE_NAME": "org.devgirl.framework7.mediaexplorer"
-    }
-  },
-  "dependent_plugins": {
+    },
     "cordova-plugin-file": {
       "PACKAGE_NAME": "org.devgirl.framework7.mediaexplorer"
     }
-  }
+  },
+  "dependent_plugins": {}
 }
