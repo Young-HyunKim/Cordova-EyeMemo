@@ -1,15 +1,11 @@
-var Sub_Add_Limit = 12;
-
-var subject_code = new Array();
-var subject_name = new Array();
-
-
 myApp.onPageInit("Register-Subject", function (page) {
-
+    
+    var Sub_Add_Limit = 12;
+    var subject_code = new Array();
+    var subject_name = new Array();
     var count = 0;
 
     $(document).ready(function () {
-        mainView.router.loadPage('Time.subject.html');
         for (var i = 0; i < Sub_Add_Limit ; i++) {
             subject_code[i] = "";
             console.log("SubjectCode : " + subject_code[i]);
@@ -32,9 +28,9 @@ myApp.onPageInit("Register-Subject", function (page) {
     });
   
     
-    $$('#S_save').on('click', function () {
-        mainView.router.loadPage('Time.subject.html');
+    $$('#data_save').on('click', function () {
         console.log(count);
+        mainView.router.loadPage('time.subject.html');
 
         for (var i = 0; i < count; i++) {
             if(count == (i+1)){
@@ -43,6 +39,8 @@ myApp.onPageInit("Register-Subject", function (page) {
             }
             
         }
+
+        mainView.router.loadPage('Time.subject.html');
 
         
         function ValueInput(count){
@@ -53,15 +51,13 @@ myApp.onPageInit("Register-Subject", function (page) {
 
                 console.log("PASS"+ (i+1));
 
-                window.localStorage.setItem("Subject_Code["+ i +"]",subject_code[i]);
-                window.localStorage.setItem("R_Subject_Name["+ i +"]",subject_name[i]);
+                localStorage.setItem("Subject_Code["+ i +"]",subject_code[i]);
+                localStorage.setItem("R_Subject_Name["+ i +"]",subject_name[i]);
 
                 console.log("subject_code[Content] : " + subject_code[i]);
                 console.log("Subject_name[Content] : " + subject_name[i]);
             }
         }
-
-        mainView.router.loadPage('Time.subject.html');
     });
 
 
