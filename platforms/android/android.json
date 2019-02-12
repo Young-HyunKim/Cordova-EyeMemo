@@ -27,6 +27,10 @@
             {
               "xml": "<feature name=\"FileTransfer\"><param name=\"android-package\" value=\"org.apache.cordova.filetransfer.FileTransfer\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"Notification\"><param name=\"android-package\" value=\"org.apache.cordova.dialogs.Notification\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -68,6 +72,9 @@
       "PACKAGE_NAME": "org.devgirl.framework7.mediaexplorer"
     },
     "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "org.devgirl.framework7.mediaexplorer"
+    },
+    "cordova-plugin-dialogs": {
       "PACKAGE_NAME": "org.devgirl.framework7.mediaexplorer"
     }
   },
@@ -301,12 +308,29 @@
       "clobbers": [
         "window.FileTransfer"
       ]
+    },
+    {
+      "id": "cordova-plugin-dialogs.notification",
+      "file": "plugins/cordova-plugin-dialogs/www/notification.js",
+      "pluginId": "cordova-plugin-dialogs",
+      "merges": [
+        "navigator.notification"
+      ]
+    },
+    {
+      "id": "cordova-plugin-dialogs.notification_android",
+      "file": "plugins/cordova-plugin-dialogs/www/android/notification.js",
+      "pluginId": "cordova-plugin-dialogs",
+      "merges": [
+        "navigator.notification"
+      ]
     }
   ],
   "plugin_metadata": {
     "cordova-plugin-mobile-ocr": "1.0.1",
     "cordova-plugin-camera": "4.0.3",
     "cordova-plugin-file": "6.0.1",
-    "cordova-plugin-file-transfer": "1.7.1"
+    "cordova-plugin-file-transfer": "1.7.1",
+    "cordova-plugin-dialogs": "2.0.1"
   }
 }
