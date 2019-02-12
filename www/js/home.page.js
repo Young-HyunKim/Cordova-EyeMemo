@@ -3,6 +3,7 @@ var CDES_count = 0;
 var CurrentDate_WeekofDay = 0;
 var Temporary_Subject_Name = "";
 var Color_Code = "";
+var Add_Limit = 12;
 
 var NowTime = new Date();
 var Subject_List_Code = new Array();
@@ -242,17 +243,15 @@ myApp.onPageInit("home-page", function (page) {
                     
                     let Scan_TS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + r + "]");
                     let Scan_RS = localStorage.getItem("R_Subject_Name[" + i + "]");
+                   
+                    var Register_Subjects ="";
 
-                    /*
-                    if(Scan_TS != null){
-                        console.log("Scan_RS : " + Scan_RS + " == " + TS + " : TS" );
-
-                        if(localStorage.getItem("R_Subject_Name[" + r + "]") == TS){
-                            Set_Color(r);
+                    for (let i = 0; i < Add_Limit; i++) {
+                        if(TS == localStorage.getItem("R_Subject_Name[" + i +"]" )){
+                            Set_Color(i);   
                         }
-
+                        
                     }
-                    */
 
                 }
 
