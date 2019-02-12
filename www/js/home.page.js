@@ -246,9 +246,9 @@ myApp.onPageInit("home-page", function (page) {
                    
                     var Register_Subjects ="";
 
-                    for (let i = 0; i < Add_Limit; i++) {
-                        if(TS == localStorage.getItem("R_Subject_Name[" + i +"]" )){
-                            Set_Color(i);   
+                    for (let c = 0; c < Add_Limit; c++) {
+                        if(TS == localStorage.getItem("R_Subject_Name[" + c +"]" )){
+                            Set_Color(1+c);   
                         }
                         
                     }
