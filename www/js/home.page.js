@@ -22,6 +22,9 @@ myApp.onPageInit("home-page", function (page) {
         $$("#Subject-Null").css('border', 'solid #E21830');
     });
 
+    $(document).ready(function () {
+        $$("#btn_schedule").addClass('about-color').addClass('color-red'); 
+    });
 
     $("#SN").css("margin", "0 auto");
     $("#note").css("margin", "0 auto");
