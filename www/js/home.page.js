@@ -3,7 +3,7 @@ var CDES_count = 0;
 var CurrentDate_WeekofDay = 0;
 var Temporary_Subject_Name = "";
 var Color_Code = "";
-var Add_Limit = 12;
+var Sub_Add_Limit = 12;
 
 var NowTime = new Date();
 var Subject_List_Code = new Array();
