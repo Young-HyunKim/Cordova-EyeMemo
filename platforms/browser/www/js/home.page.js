@@ -22,6 +22,9 @@ myApp.onPageInit("home-page", function (page) {
         $$("#Subject-Null").css('border', 'solid #E21830');
     });
 
+    $(document).ready(function () {
+        $$("#btn_schedule").addClass('about-color').addClass('color-red'); 
+    });
 
     $("#SN").css("margin", "0 auto");
     $("#note").css("margin", "0 auto");
@@ -268,7 +271,7 @@ myApp.onPageInit("home-page", function (page) {
     
         var html = "";
     
-        html += "<div class='card' id='Schedule-Card-" + Id_Number + "' style= 'margin: 30px; color:" + Color_Code + ";'>"
+        html += "<div class='card' id='Schedule-Card-" + Id_Number + "' style= 'margin: 30px; color:" + Color_Code + "; border-radius: 15px;'>"
             + "<div class='content-block' style= 'padding-top: 30px; padding-bottom: 30px;'>"
             + "<p style='text-align: center; margin-bottom: -5px; margin-top: 10px;'>"
             + "<span>" + ((Time_Code) + "시 00분 ~ " + (Time_Code) + "시 50분") + "</span><br>"
