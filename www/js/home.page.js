@@ -2,7 +2,7 @@ var count = 0;
 var CDES_count = 0;
 var CurrentDate_WeekofDay = 0;
 var Temporary_Subject_Name = "";
-var Color_Code = "";
+var Color_Code = "#000";
 var Sub_Add_Limit = 12;
 
 var NowTime = new Date();
