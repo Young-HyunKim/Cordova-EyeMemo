@@ -2,7 +2,8 @@ var count = 0;
 var CDES_count = 0;
 var CurrentDate_WeekofDay = 0;
 var Temporary_Subject_Name = "";
-var Color_Code = "";
+var Color_Code = "#000";
+var Sub_Add_Limit = 12;
 
 var NowTime = new Date();
 var Subject_List_Code = new Array();
@@ -145,8 +146,8 @@ myApp.onPageInit("home-page", function (page) {
     function CurrentSubject(){
         
         var CS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + (NowTime.getHours() - 9) + "]");
-        
-        if(CS == ""){
+        console.log(CS)
+        if(CS != ""){
             $$("#C_Subject").text(CS);
         }else{
             $$("#C_Subject").text("수업이 없습니다!");
@@ -242,17 +243,15 @@ myApp.onPageInit("home-page", function (page) {
                     
                     let Scan_TS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + r + "]");
                     let Scan_RS = localStorage.getItem("R_Subject_Name[" + i + "]");
+                   
+                    var Register_Subjects ="";
 
-                    /*
-                    if(Scan_TS != null){
-                        console.log("Scan_RS : " + Scan_RS + " == " + TS + " : TS" );
-
-                        if(localStorage.getItem("R_Subject_Name[" + r + "]") == TS){
-                            Set_Color(r);
+                    for (let c = 0; c < Add_Limit; c++) {
+                        if(TS == localStorage.getItem("R_Subject_Name[" + c +"]" )){
+                            Set_Color(1+c);   
                         }
-
+                        
                     }
-                    */
 
                 }
 
