@@ -41,6 +41,12 @@ myApp.onPageInit("Time-subject", function (page) {
         $('#Subject-Null').hide();
     
     });
+   
+    $$('#register_back').on('click', function () {
+        mainView.router.loadPage('register.subject.html');
+        $('#Subject-Null').hide();
+    
+    });
 
    
     $$('#btn-Save').on('click', function () {
