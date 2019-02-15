@@ -147,7 +147,7 @@ myApp.onPageInit("home-page", function (page) {
         
         var CS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + (NowTime.getHours() - 9) + "]");
         console.log(CS)
-        if(CS != ""){
+        if(CS != "" && CS != null){
             $$("#C_Subject").text(CS);
         }else{
             $$("#C_Subject").text("수업이 없습니다!");
