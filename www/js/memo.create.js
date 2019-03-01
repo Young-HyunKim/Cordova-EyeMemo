@@ -2,6 +2,8 @@ var Note_Content = "";
 var Note_Default = "수업 이외";
 
 myApp.onPageInit("Note", function (page) {
+    var Note_Numbering = 0;
+    localStorage.setItem("Note_Numbering",Note_Numbering);
 
     $$('#note_save').on('click', function () {
         
@@ -10,10 +12,12 @@ myApp.onPageInit("Note", function (page) {
 
         var CS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + (NowTime.getHours() - 9) + "]");
         
-        if(CS == ""){
-            localStorage.setItem("수업 이외",Note_Content);
+        if(CS == "" || CS == null){
+            Note_Numbering += 1;
+            localStorage.setItem("수업 이외["+ Note_Numbering +"]",Note_Content);
         }else{
-            localStorage.setItem(CS,Note_Content);
+            Note_Numbering += 1;
+            localStorage.setItem(CS+"["+ Note_Numbering +"]",Note_Content);
         }
         
         mainView.router.loadPage('home.page.html');
