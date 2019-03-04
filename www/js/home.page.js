@@ -200,8 +200,6 @@ myApp.onPageInit("home-page", function (page) {
         $$("#memo-list").show();
         $$("#memo-list").append(html);
 
-        
-
         $("#Subject-Note-"+ i ).css('border', 'solid #E21830');
     }
 
