@@ -146,11 +146,12 @@ myApp.onPageInit("home-page", function (page) {
     function CurrentSubject(){
         
         var CS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + (NowTime.getHours() - 9) + "]");
-        console.log(CS)
-        if(CS != "" && CS != null){
-            $$("#C_Subject").text(CS);
-        }else{
+        //console.log(CS);
+        
+        if(CS == "" || CS == null){
             $$("#C_Subject").text("수업이 없습니다!");
+        }else{
+            $$("#C_Subject").text(CS);
         }
         
     }
@@ -158,23 +159,46 @@ myApp.onPageInit("home-page", function (page) {
     $$('#Search_Subject').on('click', function () {
         var Sub_Name = $$("#keyword").val();
         var Sub_Note = localStorage.getItem(Sub_Name);
-        
-        //Select_Notes(Sub_Note);
+
+        Show_Notes(Sub_Note);
     });
+
+    function Show_Notes(N_content){
+        var html = "";
+        
+        html += "<li>"
+             + "<a href='#' class='item-link item-content'>"
+             + "<div class='item-inner'>"
+             + "<div class='item-title-row'>"
+             + "<div class='item-title'>"+N_content+"</div>"
+             + "</div>"
+             + "<div class='item-title'></div>"
+             + "</div>"
+             + "</a>"
+             + "</li>";
+
+        $$("#Notes").show();
+        $$("#Notes").append(html);
+
+        console.log(html);
+    }
 
     function Select_Notes(Note_Content){
         var html = "";
-        
+        var i = 0;
+
+        i+=1;
+
         html += "<div class='card' id='Subject-Note-" + i + "' style= 'margin: 30px;'>"
             + "<div class='content-block' style= 'padding-top: 20px; padding-bottom: 30px;'>"
             + "<h3 style='text-align: center; margin-bottom: -5px; margin-top: 10px;'>"
-            + rs.rows.item(i).notes
+            + Note_Content
             + "</h3>"
             + "</div>"
             + "</div>";
            
-        $$("#Notes").show();
-        $$("#Notes").append(html);
+        $$("#memo-list").show();
+        $$("#memo-list").append(html);
 
         $("#Subject-Note-"+ i ).css('border', 'solid #E21830');
     }
