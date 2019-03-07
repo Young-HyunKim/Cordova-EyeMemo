@@ -4,6 +4,8 @@ var CurrentDate_WeekofDay = 0;
 var Temporary_Subject_Name = "";
 var Color_Code = "#000";
 var Sub_Add_Limit = 12;
+var Stack_Is_Subject = "";
+var Stack_Count = 0;
 
 var NowTime = new Date();
 var Subject_List_Code = new Array();
@@ -156,11 +158,50 @@ myApp.onPageInit("home-page", function (page) {
         
     }
 
+
     $$('#Search_Subject').on('click', function () {
         var Sub_Name = $$("#keyword").val();
-        var Sub_Note = localStorage.getItem(Sub_Name);
+        
 
-        Show_Notes(Sub_Note);
+        if(Sub_Name == "" || Sub_Name == null){
+            myApp.alert("과목명을 입력해주세요!");
+
+        }else{
+            
+            Stack_Is_Subject = Sub_Name;
+
+            console.log("Stack_Is_Subject : " + Stack_Is_Subject);
+
+            if (Stack_Count == 0 && Stack_Is_Subject == Sub_Name) {
+                Stack_Count += 1;
+
+                console.log("Stack_Count : " + Stack_Count);
+                console.log("Stack : " + "True");
+
+                console.log(localStorage.getItem("Note_Numbering"));
+                console.log("ParseInt : " + parseInt(localStorage.getItem("Note_Numbering")));
+
+                var Note_Limit = parseInt(localStorage.getItem("Note_Numbering"));
+
+                for (let index = 0; index < Note_Limit + 1; index++) {
+                    console.log(localStorage.getItem("Note_Numbering"));
+                    console.log("Sub_Name : " + Sub_Name);
+
+                    var Sub_Note = localStorage.getItem(Sub_Name + "[" + index + "]");
+                    Show_Notes(Sub_Note);
+
+                    Sub_Name = Sub_Name;
+                }
+                
+            }else{
+                
+            }
+
+            
+            
+            
+        }
+        
     });
 
     function Show_Notes(N_content){
@@ -294,7 +335,7 @@ myApp.onPageInit("home-page", function (page) {
     
         var html = "";
     
-        html += "<div class='card' id='Schedule-Card-" + Id_Number + "' style= 'margin: 30px; color:" + Color_Code + "; border-radius: 15px;'>"
+        html += "<div class='card' id='Schedule-Card-" + Id_Number + "' style= 'margin: 30px; color:" + Color_Code + "; border-radius: 7px;'>"
             + "<div class='content-block' style= 'padding-top: 30px; padding-bottom: 30px;'>"
             + "<p style='text-align: center; margin-bottom: -5px; margin-top: 10px;'>"
             + "<span>" + ((Time_Code) + "시 00분 ~ " + (Time_Code) + "시 50분") + "</span><br>"
@@ -311,7 +352,6 @@ myApp.onPageInit("home-page", function (page) {
     
         $("#" + "Schedule-Card-" + Id_Number).css('border', 'solid ' + Color_Code);
     
-        //console.log(html);
     }
 
 });
