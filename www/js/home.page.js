@@ -27,6 +27,7 @@ myApp.onPageInit("home-page", function (page) {
 
     $(document).ready(function () {
         $$("#btn_schedule").addClass('about-color').addClass('color-red'); 
+        $$("#folder_note_btn").addClass('about-color').addClass('color-yellow');
     });
 
     $("#SN").css("margin", "0 auto");
@@ -86,10 +87,12 @@ myApp.onPageInit("home-page", function (page) {
 
     $$("#folder_note_btn").on('click', function () {
         showHomeTabFolder_Note();
+        $$("#memo-list").text("메모");
     });
     
     $$("#folder_photo_btn").on('click', function () {
         showHomeTabFolder_Photo();
+        $$("#memo-list").text("사진");
     });
 
 
@@ -152,7 +155,7 @@ myApp.onPageInit("home-page", function (page) {
         $$("#Now_CDT").show();
         $$("#Now_CDT").append(html);
 
-        $("#Now_CDT").css('border', 'solid #E21830');
+        $("#Now_CDT").css('border', 'solid 2px #E21830');
 
     }
 
@@ -178,46 +181,42 @@ myApp.onPageInit("home-page", function (page) {
 
         }else{
             
-            Stack_Is_Subject = Sub_Name;
+            var NPCS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + (NowTime.getHours() - 9) + "]");
 
-            console.log("Stack_Is_Subject : " + Stack_Is_Subject);
+            if (NPCS == "" || NPCS == null) {
+                
+                Search_Notes("수업 이외");
 
-            if (Stack_Count == 0 && Stack_Is_Subject == Sub_Name) {
-                Stack_Count += 1;
+            } else {
+                
+                Search_Notes(NPCS);
 
-                console.log("Stack_Count : " + Stack_Count);
-                console.log("Stack : " + "True");
+            }
 
-                console.log(localStorage.getItem("Note_Numbering"));
-                console.log("ParseInt : " + parseInt(localStorage.getItem("Note_Numbering")));
+            function Search_Notes(Pramater_Sujec_tName){
+                var Note_Limit = parseInt(localStorage.getItem("Note_Numbering_" + Pramater_Sujec_tName));
+                console.log("ParseInt : " + parseInt(localStorage.getItem("Note_Numbering_" + Pramater_Sujec_tName)));
 
-                var Note_Limit = parseInt(localStorage.getItem("Note_Numbering"));
-
-                for (let index = 0; index < Note_Limit + 1; index++) {
-                    console.log(localStorage.getItem("Note_Numbering"));
+                for (let index = 1; index < Note_Limit + 1; index++) {
+                    console.log(localStorage.getItem("Note_Numbering_" + Pramater_Sujec_tName));
                     console.log("Sub_Name : " + Sub_Name);
 
                     var Sub_Note = localStorage.getItem(Sub_Name + "[" + index + "]");
-                    Show_Notes(Sub_Note);
+                    Show_Notes(Sub_Note,index);
 
                     Sub_Name = Sub_Name;
                 }
-                
-            }else{
-                
             }
-
-            
-            
-            
+   
         }
         
     });
 
-    function Show_Notes(N_content){
+    function Show_Notes(N_content,i){
+
         var html = "";
         
-        html += "<li>"
+        html += "<li id='note_No."+ i +">"
              + "<a href='#' class='item-link item-content'>"
              + "<div class='item-inner'>"
              + "<div class='item-title-row'>"
