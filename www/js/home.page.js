@@ -33,6 +33,8 @@ myApp.onPageInit("home-page", function (page) {
     $("#note").css("margin", "0 auto");
     $("#scanner").css("margin", "0 auto");
     $("#timer").css("margin", "0 auto");
+
+    $(".material-icon").css("margin", "0 auto");
     
 
     $("#Subject-Null").css('border', 'solid #E21830');
@@ -41,23 +43,24 @@ myApp.onPageInit("home-page", function (page) {
 
     
 /*
-    $('#Note_List').slimScroll({
-        height: '280px'
-    });
-
+    
     $('#Pic_List').slimScroll({
         height: '210px'
     });
 
-    
-*/
-
     $('#MediaList').slimScroll({
         height: '360px'
     });
+    
+*/
+
+    $('#Note_List').slimScroll({
+        height: '380px'
+    });
+
 
     $('#Subject-List').slimScroll({
-        height: '360px'
+        height: '380px'
     });
 
 
@@ -79,6 +82,14 @@ myApp.onPageInit("home-page", function (page) {
 
     $$('#btn_setting').on('click', function () {
         showHomeTabsetting();
+    });
+
+    $$("#folder_note_btn").on('click', function () {
+        showHomeTabFolder_Note();
+    });
+    
+    $$("#folder_photo_btn").on('click', function () {
+        showHomeTabFolder_Photo();
     });
 
 
@@ -148,7 +159,6 @@ myApp.onPageInit("home-page", function (page) {
     function CurrentSubject(){
         
         var CS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + (NowTime.getHours() - 9) + "]");
-        //console.log(CS);
         
         if(CS == "" || CS == null){
             $$("#C_Subject").text("수업이 없습니다!");
@@ -380,6 +390,18 @@ function showHomeTabFolder() {
     $$("#btn_home").removeClass('about-color').removeClass('color-red');
     $$("#btn_portal").removeClass('about-color').removeClass('color-red');
     $$("#btn_setting").removeClass('about-color').removeClass('color-red');
+}
+
+function showHomeTabFolder_Photo() {
+    $$("#folder_photo_btn").addClass('about-color').addClass('color-yellow');    //about-color : 탭 색상, color-brown : 탭 글자 색상
+    $$("#folder_note_btn").removeClass('about-color').removeClass('color-yellow');
+    
+}
+
+function showHomeTabFolder_Note() {
+    $$("#folder_note_btn").addClass('about-color').addClass('color-yellow');    //about-color : 탭 색상, color-brown : 탭 글자 색상
+    $$("#folder_photo_btn").removeClass('about-color').removeClass('color-yellow');
+    
 }
 
 function showHomeTabsetting() {
