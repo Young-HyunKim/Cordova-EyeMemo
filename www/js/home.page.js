@@ -17,11 +17,6 @@ $(document).ready(function () {
     }
 });
 
-$(document).ready(function () {
-    localStorage.setItem("Search_Subject","");
-});
-
-
 myApp.onPageInit("home-page", function (page) {
 
 
@@ -46,19 +41,6 @@ myApp.onPageInit("home-page", function (page) {
     $("#Subject-Null").css('border', 'solid #E21830');
     $("#Note-Null").css('border', 'solid #E21830');
     $("#Pic-Null").css('border', 'solid #E21830');
-
-    
-/*
-    
-    $('#Pic_List').slimScroll({
-        height: '210px'
-    });
-
-    $('#MediaList').slimScroll({
-        height: '360px'
-    });
-    
-*/
 
     $('#Note_List').slimScroll({
         height: '380px'
@@ -92,13 +74,37 @@ myApp.onPageInit("home-page", function (page) {
 
     $$("#folder_note_btn").on('click', function () {
         showHomeTabFolder_Note();
+        List_Reset();
+
         $$("#memo-list").text("메모");
     });
     
     $$("#folder_photo_btn").on('click', function () {
         showHomeTabFolder_Photo();
+        List_Reset();
+        
         $$("#memo-list").text("사진");
     });
+
+    function List_Reset() {
+        var html_1 = "";
+
+        html_1 = "<ul id='Notes_Content' style='display: block;padding-left: 5px;'>"
+            + "</ul>";
+
+        $$("#Sub_List_Group").show();
+        $$("#Sub_List_Group").remove(html_1);
+
+        var html_2 = "";
+
+        html_2 = "<div class='list-group' id='Sub_List_Group'>"
+            + "<ul id='Notes_Content' style='display: block;padding-left: 5px;'>"
+            + "</ul>"
+            + "</div>";
+
+        $$("#Notes").show();
+        $$("#Notes").append(html_2);
+    }
 
 
     $(document).ready(function () {
