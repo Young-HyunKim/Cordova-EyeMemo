@@ -17,6 +17,11 @@ $(document).ready(function () {
     }
 });
 
+$(document).ready(function () {
+    localStorage.setItem("Search_Subject","");
+});
+
+
 myApp.onPageInit("home-page", function (page) {
 
 
@@ -174,31 +179,99 @@ myApp.onPageInit("home-page", function (page) {
 
     $$('#Search_Subject').on('click', function () {
         var Sub_Name = $$("#keyword").val();
-        
+        var Is_excute = 0;
 
+        if (localStorage.getItem("Search_Subject") == null) {
+            localStorage.setItem("Search_Subject",Sub_Name);
+
+            Is_excute = 1;
+            
+        } else {
+            if(localStorage.getItem("Search_Subject") == Sub_Name){
+
+            }else{
+                localStorage.setItem("Search_Subject",Sub_Name);
+                
+                Is_excute = 1;
+            }
+
+            
+        }
+        
+        
         if(Sub_Name == "" || Sub_Name == null){
             myApp.alert("과목명을 입력해주세요!");
 
         }else{
-            
-            var NPCS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + (NowTime.getHours() - 9) + "]");
 
-            if (NPCS == "" || NPCS == null) {
-                
-                Search_Notes("수업 이외");
+            if (Is_excute == 1) {
+                var NPCS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + (NowTime.getHours() - 9) + "]");
+                var List_Count = 0;
 
-            } else {
-                
-                Search_Notes(NPCS);
+                if (NPCS == "" || NPCS == null) {
+                    List_Count = parseInt(localStorage.getItem("Note_Numbering_" + "수업 이외"));
+                    console.log("List_Count[수업 이외] : " + List_Count);
 
+                    Search_Notes("수업 이외");
+
+                } else {
+                    List_Count = parseInt(localStorage.getItem("Note_Numbering_" + NPCS));
+                    console.log("List_Count[" + NPCS + "] : " + List_Count);
+
+                    List_Stack_Correction(List_Count);
+                    Search_Notes(NPCS);
+
+                }
+
+            }else{
+
+                var html_1 = "";
+
+                html_1 = "<ul id='Notes_Content' style='display: block;padding-left: 5px;'>" 
+                     + "</ul>";
+
+                $$("#Sub_List_Group").show();
+                $$("#Sub_List_Group").remove(html_1);
+
+                var html_2 ="";
+
+                html_2 = "<div class='list-group' id='Sub_List_Group'>"
+                       + "<ul id='Notes_Content' style='display: block;padding-left: 5px;'>"
+                       + "</ul>"
+                       + "</div>";
+
+                $$("#Notes").show();
+                $$("#Notes").append(html_2);
+
+                var NPCS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + (NowTime.getHours() - 9) + "]");
+                var List_Count = 0;
+
+                if (NPCS == "" || NPCS == null) {
+                    List_Count = parseInt(localStorage.getItem("Note_Numbering_" + "수업 이외"));
+                    console.log("List_Count[수업 이외] : " + List_Count);
+
+                    Search_Notes("수업 이외");
+
+                } else {
+                    List_Count = parseInt(localStorage.getItem("Note_Numbering_" + NPCS));
+                    console.log("List_Count[" + NPCS + "] : " + List_Count);
+
+                    List_Stack_Correction(List_Count);
+                    Search_Notes(NPCS);
+
+                }
+                    
             }
 
-            function Search_Notes(Pramater_Sujec_tName){
-                var Note_Limit = parseInt(localStorage.getItem("Note_Numbering_" + Pramater_Sujec_tName));
-                console.log("ParseInt : " + parseInt(localStorage.getItem("Note_Numbering_" + Pramater_Sujec_tName)));
+
+            
+
+            function Search_Notes(Pramater_Subject_Name){
+                var Note_Limit = parseInt(localStorage.getItem("Note_Numbering_" + Pramater_Subject_Name));
+                console.log("ParseInt : " + parseInt(localStorage.getItem("Note_Numbering_" + Pramater_Subject_Name)));
 
                 for (let index = 1; index < Note_Limit + 1; index++) {
-                    console.log(localStorage.getItem("Note_Numbering_" + Pramater_Sujec_tName));
+                    console.log(localStorage.getItem("Note_Numbering_" + Pramater_Subject_Name));
                     console.log("Sub_Name : " + Sub_Name);
 
                     var Sub_Note = localStorage.getItem(Sub_Name + "[" + index + "]");
@@ -212,10 +285,21 @@ myApp.onPageInit("home-page", function (page) {
         
     });
 
-    function Show_Notes(N_content,i){
+    function List_Stack_Correction(last_element){  
 
-        var html = "";
+        for (let index = 1; index < last_element; index++) {
+            
+            $$("#Notes_Content").show();
+            $$("#Notes_Content").remove(html);
+            
+        }
+
+    }
+
+    function Show_Notes(N_content,i){
         
+        var html = "";
+ 
         html += "<li id='note_No."+ i +">"
              + "<a href='#' class='item-link item-content'>"
              + "<div class='item-inner'>"
@@ -227,8 +311,8 @@ myApp.onPageInit("home-page", function (page) {
              + "</a>"
              + "</li>";
 
-        $$("#Notes").show();
-        $$("#Notes").append(html);
+        $$("#Notes_Content").show();
+        $$("#Notes_Content").append(html);
 
         console.log(html);
     }

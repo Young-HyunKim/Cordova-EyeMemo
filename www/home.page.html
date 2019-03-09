@@ -71,6 +71,8 @@
                         <div class = "list-group">
                             <ul id="Today_Subjects" style="padding-bottom: 3px;padding-top: 0px;">
                                     <li class = "list-group-title">오늘 일정 리스트</li>
+                                    
+                                    <li class = "item-content" id="Not_Schedule"><h3>아직 등록된 시간표가 없습니다.</h3></li>
                             </ul>
                         </div>    
                     </div>
@@ -155,11 +157,11 @@
                     <div class="subnavbar" style="background: #fff;">
                         <div class="buttons-row" style="background: #fff; border-radius: 0px; ">
                             <a href="#folder_note_tab" class="button tab-link active" id="folder_note_btn" style="background: #e21830; margin-right: 10px;">
-                                <i class="material-icons" style="margin-top: 6px;width: 24px;">notes</i>
+                                <i class="material-icons" style="margin-top: 10px;width: 24px;">notes</i>
                             </a>
                     
                             <a href="#folder_photo_tab" class="button tab-link active" id="folder_photo_btn" style="background: #e21830; margin-left: 10px;">
-                                <i class="material-icons" style="margin-top: 6px;">photo_camera</i>
+                                <i class="material-icons" style="margin-top: 10px;">photo_camera</i>
                             </a>
                         </div>
                     </div>
@@ -210,8 +212,12 @@
                                 <div class="list-group">
                                     <ul id="Notes">
                                         <li class="list-group-title" id="memo-list">메모</li>
-                        
-                        
+                                        
+                                        <div class="list-group" id="Sub_List_Group">
+                                            <ul id="Notes_Content" style="display: block;padding-left: 5px;">
+
+                                            </ul>
+                                        </div>
                         
                                     </ul>
                                 </div>

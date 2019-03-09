@@ -56,6 +56,7 @@ myApp.onPageInit("Note", function (page) {
             console.log("FALSE : "+Note_Numbering);
         }
         
+        localStorage.setItem("Search_Subject","");
         mainView.router.loadPage('home.page.html');
     });
 
