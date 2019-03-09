@@ -4,6 +4,8 @@ var CurrentDate_WeekofDay = 0;
 var Temporary_Subject_Name = "";
 var Color_Code = "#000";
 var Sub_Add_Limit = 12;
+var Stack_Is_Subject = "";
+var Stack_Count = 0;
 
 var NowTime = new Date();
 var Subject_List_Code = new Array();
@@ -25,12 +27,15 @@ myApp.onPageInit("home-page", function (page) {
 
     $(document).ready(function () {
         $$("#btn_schedule").addClass('about-color').addClass('color-red'); 
+        $$("#folder_note_btn").addClass('about-color').addClass('color-yellow');
     });
 
     $("#SN").css("margin", "0 auto");
     $("#note").css("margin", "0 auto");
     $("#scanner").css("margin", "0 auto");
     $("#timer").css("margin", "0 auto");
+
+    $(".material-icon").css("margin", "0 auto");
     
 
     $("#Subject-Null").css('border', 'solid #E21830');
@@ -39,23 +44,24 @@ myApp.onPageInit("home-page", function (page) {
 
     
 /*
-    $('#Note_List').slimScroll({
-        height: '280px'
-    });
-
+    
     $('#Pic_List').slimScroll({
         height: '210px'
     });
 
-    
-*/
-
     $('#MediaList').slimScroll({
         height: '360px'
     });
+    
+*/
+
+    $('#Note_List').slimScroll({
+        height: '380px'
+    });
+
 
     $('#Subject-List').slimScroll({
-        height: '360px'
+        height: '380px'
     });
 
 
@@ -77,6 +83,16 @@ myApp.onPageInit("home-page", function (page) {
 
     $$('#btn_setting').on('click', function () {
         showHomeTabsetting();
+    });
+
+    $$("#folder_note_btn").on('click', function () {
+        showHomeTabFolder_Note();
+        $$("#memo-list").text("메모");
+    });
+    
+    $$("#folder_photo_btn").on('click', function () {
+        showHomeTabFolder_Photo();
+        $$("#memo-list").text("사진");
     });
 
 
@@ -139,14 +155,13 @@ myApp.onPageInit("home-page", function (page) {
         $$("#Now_CDT").show();
         $$("#Now_CDT").append(html);
 
-        $("#Now_CDT").css('border', 'solid #E21830');
+        $("#Now_CDT").css('border', 'solid 2px #E21830');
 
     }
 
     function CurrentSubject(){
         
         var CS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + (NowTime.getHours() - 9) + "]");
-        //console.log(CS);
         
         if(CS == "" || CS == null){
             $$("#C_Subject").text("수업이 없습니다!");
@@ -156,17 +171,52 @@ myApp.onPageInit("home-page", function (page) {
         
     }
 
+
     $$('#Search_Subject').on('click', function () {
         var Sub_Name = $$("#keyword").val();
-        var Sub_Note = localStorage.getItem(Sub_Name);
+        
 
-        Show_Notes(Sub_Note);
+        if(Sub_Name == "" || Sub_Name == null){
+            myApp.alert("과목명을 입력해주세요!");
+
+        }else{
+            
+            var NPCS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + (NowTime.getHours() - 9) + "]");
+
+            if (NPCS == "" || NPCS == null) {
+                
+                Search_Notes("수업 이외");
+
+            } else {
+                
+                Search_Notes(NPCS);
+
+            }
+
+            function Search_Notes(Pramater_Sujec_tName){
+                var Note_Limit = parseInt(localStorage.getItem("Note_Numbering_" + Pramater_Sujec_tName));
+                console.log("ParseInt : " + parseInt(localStorage.getItem("Note_Numbering_" + Pramater_Sujec_tName)));
+
+                for (let index = 1; index < Note_Limit + 1; index++) {
+                    console.log(localStorage.getItem("Note_Numbering_" + Pramater_Sujec_tName));
+                    console.log("Sub_Name : " + Sub_Name);
+
+                    var Sub_Note = localStorage.getItem(Sub_Name + "[" + index + "]");
+                    Show_Notes(Sub_Note,index);
+
+                    Sub_Name = Sub_Name;
+                }
+            }
+   
+        }
+        
     });
 
-    function Show_Notes(N_content){
+    function Show_Notes(N_content,i){
+
         var html = "";
         
-        html += "<li>"
+        html += "<li id='note_No."+ i +">"
              + "<a href='#' class='item-link item-content'>"
              + "<div class='item-inner'>"
              + "<div class='item-title-row'>"
@@ -294,7 +344,7 @@ myApp.onPageInit("home-page", function (page) {
     
         var html = "";
     
-        html += "<div class='card' id='Schedule-Card-" + Id_Number + "' style= 'margin: 30px; color:" + Color_Code + "; border-radius: 15px;'>"
+        html += "<div class='card' id='Schedule-Card-" + Id_Number + "' style= 'margin: 30px; color:" + Color_Code + "; border-radius: 7px;'>"
             + "<div class='content-block' style= 'padding-top: 30px; padding-bottom: 30px;'>"
             + "<p style='text-align: center; margin-bottom: -5px; margin-top: 10px;'>"
             + "<span>" + ((Time_Code) + "시 00분 ~ " + (Time_Code) + "시 50분") + "</span><br>"
@@ -311,7 +361,6 @@ myApp.onPageInit("home-page", function (page) {
     
         $("#" + "Schedule-Card-" + Id_Number).css('border', 'solid ' + Color_Code);
     
-        //console.log(html);
     }
 
 });
@@ -340,6 +389,18 @@ function showHomeTabFolder() {
     $$("#btn_home").removeClass('about-color').removeClass('color-red');
     $$("#btn_portal").removeClass('about-color').removeClass('color-red');
     $$("#btn_setting").removeClass('about-color').removeClass('color-red');
+}
+
+function showHomeTabFolder_Photo() {
+    $$("#folder_photo_btn").addClass('about-color').addClass('color-yellow');    //about-color : 탭 색상, color-brown : 탭 글자 색상
+    $$("#folder_note_btn").removeClass('about-color').removeClass('color-yellow');
+    
+}
+
+function showHomeTabFolder_Note() {
+    $$("#folder_note_btn").addClass('about-color').addClass('color-yellow');    //about-color : 탭 색상, color-brown : 탭 글자 색상
+    $$("#folder_photo_btn").removeClass('about-color').removeClass('color-yellow');
+    
 }
 
 function showHomeTabsetting() {
