@@ -82,7 +82,7 @@ myApp.onPageInit("home-page", function (page) {
     $$("#folder_photo_btn").on('click', function () {
         showHomeTabFolder_Photo();
         List_Reset();
-        
+
         $$("#memo-list").text("사진");
     });
 
@@ -186,12 +186,12 @@ myApp.onPageInit("home-page", function (page) {
     $$('#Search_Subject').on('click', function () {
         var Sub_Name = $$("#keyword").val();
 
-        
         if(Sub_Name == "" || Sub_Name == null){
             myApp.alert("과목명을 입력해주세요!");
 
         }else{
-
+            
+            
             var html_1 = "";
 
             html_1 = "<ul id='Notes_Content' style='display: block;padding-left: 5px;'>" 
@@ -237,9 +237,17 @@ myApp.onPageInit("home-page", function (page) {
                     console.log("Sub_Name : " + Sub_Name);
 
                     var Sub_Note = localStorage.getItem(Sub_Name + "[" + index + "]");
-                    Show_Notes(Sub_Note,index);
+                    
+                    if (Sub_Note != null || Sub_Name == null) {
 
-                    Sub_Name = Sub_Name;
+                        Show_Notes(Sub_Note,index);
+
+                    }else{
+                        myApp.alert("검색 결과가 없습니다!");
+                    }
+                    
+                    
+
                 }
             }
    
