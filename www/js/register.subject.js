@@ -67,7 +67,7 @@ myApp.onPageInit("Register-Subject", function (page) {
     $$("#btn_Add_Content").on('click', function () {
         count += 1;
 
-        if(count == 13){
+        if(count == 12){
             myApp.alert("최대 12개 까지 입력하실 수 있습니다.");
             count=12;
         }

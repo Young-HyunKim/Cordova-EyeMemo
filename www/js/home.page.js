@@ -6,16 +6,31 @@ var Color_Code = "#000";
 var Sub_Add_Limit = 12;
 var Stack_Is_Subject = "";
 var Stack_Count = 0;
+var Row_Count = 0;
 
 var NowTime = new Date();
 var Subject_List_Code = new Array();
+var Sibkect_List_Name = new Array();
 
 $(document).ready(function () {
     for (var i = 0; i < Sub_Add_Limit; i++) {
         Subject_List_Code[i] = "";
         console.log("Subject_List_Code : " + Subject_List_Code[i]);
+        
     }
 });
+
+$(document).ready(function () {
+    
+    for (var i = 0; i < Sub_Add_Limit; i++) {
+       if (localStorage.getItem("R_Subject_Name["+ i +"]") != null) {
+            Row_Count += 1;
+       } 
+    }
+    
+});
+
+
 
 myApp.onPageInit("home-page", function (page) {
 
@@ -85,6 +100,287 @@ myApp.onPageInit("home-page", function (page) {
 
         $$("#memo-list").text("사진");
     });
+
+    var Cols = "";
+    
+
+    for (var i = 0; i < Sub_Add_Limit; i++) {
+        Subject_List_Code[i] = localStorage.getItem("R_Subject_Name["+ i +"]");
+        
+        if (localStorage.getItem("R_Subject_Name["+ i +"]") != null) {
+            Cols += localStorage.getItem("R_Subject_Name["+ i +"]") + ",";
+            
+            console.log(Cols);
+        }
+
+    }
+
+    //var myApp = new Framework7();
+
+    switch (Row_Count - 1) {
+        case 0:
+            var pickerDevice = myApp.picker({
+                input: '#picker-device',
+                cols: [
+                {
+                    textAlign: 'center',
+                    values: [
+                        Subject_List_Code[0],"수업 이외"
+                    ]
+                }
+                ]
+            });
+
+            break;
+        
+        case 1:
+            var pickerDevice = myApp.picker({
+                input: '#picker-device',
+                cols: [
+                    {
+                        textAlign: 'center',
+                        values: [
+                            Subject_List_Code[0],
+                            Subject_List_Code[1],
+                            "수업 이외"
+                        ]
+                    }
+                ]
+            });
+
+            break;
+        
+        case 2:
+            var pickerDevice = myApp.picker({
+                input: '#picker-device',
+                cols: [
+                    {
+                        textAlign: 'center',
+                        values: [
+                            Subject_List_Code[0],
+                            Subject_List_Code[1],
+                            Subject_List_Code[2],
+                            "수업 이외"
+                        ]
+                    }
+                ]
+            });
+
+            break;
+
+        case 3:
+        var pickerDevice = myApp.picker({
+            input: '#picker-device',
+            cols: [
+                {
+                    textAlign: 'center',
+                    values: [
+                        Subject_List_Code[0],
+                        Subject_List_Code[1],
+                        Subject_List_Code[2],
+                        Subject_List_Code[3],
+                        "수업 이외"
+                        
+                    ]
+                }
+            ]
+        });
+
+        break;
+
+        case 4:
+        var pickerDevice = myApp.picker({
+            input: '#picker-device',
+            cols: [
+                {
+                    textAlign: 'center',
+                    values: [
+                        Subject_List_Code[0],
+                        Subject_List_Code[1],
+                        Subject_List_Code[2],
+                        Subject_List_Code[3],
+                        Subject_List_Code[4],
+                        "수업 이외"
+                    ]
+                }
+            ]
+        });
+
+        break;
+
+        case 5:
+        var pickerDevice = myApp.picker({
+            input: '#picker-device',
+            cols: [
+                {
+                    textAlign: 'center',
+                    values: [
+                        Subject_List_Code[0],
+                        Subject_List_Code[1],
+                        Subject_List_Code[2],
+                        Subject_List_Code[3],
+                        Subject_List_Code[4],
+                        Subject_List_Code[5],
+                        "수업 이외"
+                    ]
+                }
+            ]
+        });
+
+        break;
+
+        case 6:
+        var pickerDevice = myApp.picker({
+            input: '#picker-device',
+            cols: [
+                {
+                    textAlign: 'center',
+                    values: [
+                        Subject_List_Code[0],
+                        Subject_List_Code[1],
+                        Subject_List_Code[2],
+                        Subject_List_Code[3],
+                        Subject_List_Code[4],
+                        Subject_List_Code[5],
+                        Subject_List_Code[6],
+                        "수업 이외"
+                    ]
+                }
+            ]
+        });
+
+        break;
+
+        case 7:
+        var pickerDevice = myApp.picker({
+            input: '#picker-device',
+            cols: [
+                {
+                    textAlign: 'center',
+                    values: [
+                        Subject_List_Code[0],
+                        Subject_List_Code[1],
+                        Subject_List_Code[2],
+                        Subject_List_Code[3],
+                        Subject_List_Code[4],
+                        Subject_List_Code[5],
+                        Subject_List_Code[6],
+                        Subject_List_Code[7],
+                        "수업 이외"
+                    ]
+                }
+            ]
+        });
+
+        break;
+
+        case 8:
+        var pickerDevice = myApp.picker({
+            input: '#picker-device',
+            cols: [
+                {
+                    textAlign: 'center',
+                    values: [
+                        Subject_List_Code[0],
+                        Subject_List_Code[1],
+                        Subject_List_Code[2],
+                        Subject_List_Code[3],
+                        Subject_List_Code[4],
+                        Subject_List_Code[5],
+                        Subject_List_Code[6],
+                        Subject_List_Code[7],
+                        Subject_List_Code[8],
+                        "수업 이외"
+                    ]
+                }
+            ]
+        });
+
+        break;
+
+        case 9:
+        var pickerDevice = myApp.picker({
+            input: '#picker-device',
+            cols: [
+                {
+                    textAlign: 'center',
+                    values: [
+                        Subject_List_Code[0],
+                        Subject_List_Code[1],
+                        Subject_List_Code[2],
+                        Subject_List_Code[3],
+                        Subject_List_Code[4],
+                        Subject_List_Code[5],
+                        Subject_List_Code[6],
+                        Subject_List_Code[7],
+                        Subject_List_Code[8],
+                        Subject_List_Code[9],
+                        "수업 이외"
+                    ]
+                }
+            ]
+        });
+
+        break;
+
+        case 10:
+        var pickerDevice = myApp.picker({
+            input: '#picker-device',
+            cols: [
+                {
+                    textAlign: 'center',
+                    values: [
+                        Subject_List_Code[0],
+                        Subject_List_Code[1],
+                        Subject_List_Code[2],
+                        Subject_List_Code[3],
+                        Subject_List_Code[4],
+                        Subject_List_Code[5],
+                        Subject_List_Code[6],
+                        Subject_List_Code[7],
+                        Subject_List_Code[8],
+                        Subject_List_Code[9],
+                        Subject_List_Code[10],
+                        "수업 이외"
+                    ]
+                }
+            ]
+        });
+
+        break;
+
+        case 11:
+        var pickerDevice = myApp.picker({
+            input: '#picker-device',
+            cols: [
+                {
+                    textAlign: 'center',
+                    values: [
+                        Subject_List_Code[0],
+                        Subject_List_Code[1],
+                        Subject_List_Code[2],
+                        Subject_List_Code[3],
+                        Subject_List_Code[4],
+                        Subject_List_Code[5],
+                        Subject_List_Code[6],
+                        Subject_List_Code[7],
+                        Subject_List_Code[8],
+                        Subject_List_Code[9],
+                        Subject_List_Code[10],
+                        Subject_List_Code[11],
+                        "수업 이외"
+                    ]
+                }
+            ]
+        });
+
+        break;
+
+        default:
+            break;
+    }
+
+      
 
     function List_Reset() {
         var html_1 = "";
@@ -184,7 +480,7 @@ myApp.onPageInit("home-page", function (page) {
 
 
     $$('#Search_Subject').on('click', function () {
-        var Sub_Name = $$("#keyword").val();
+        var Sub_Name = $$("#picker-device").val();
 
         if(Sub_Name == "" || Sub_Name == null){
             myApp.alert("과목명을 입력해주세요!");
