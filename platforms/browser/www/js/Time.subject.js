@@ -19,6 +19,8 @@ myApp.onPageInit("Time-subject", function (page) {
     var IndexTemp_Thurs = 0;
     var IndexTemp_Fri = 0;
 
+    var Save_Condition_Check = 0 ;
+
     $(document).ready(function () {
 
         for (var i = 0; i < Add_Limit ; i++) {
@@ -37,15 +39,22 @@ myApp.onPageInit("Time-subject", function (page) {
 
 
     $$('#btn-Save').on('click', function () {
-        mainView.router.loadPage('home.page.html');
+        
         $('#Not_Schedule').hide();
+
+        Save_Condition_Check = (IndexTemp_Mon + IndexTemp_Tues + IndexTemp_Wednes + IndexTemp_Thurs + IndexTemp_Fri);
+
+        if (Save_Condition_Check == 0) {
+            myApp.alert("하나 이상의 일정을 등록 해주세요.")
+        }else{
+            mainView.router.loadPage('home.page.html');
+        }
     
     });
    
     $$('#register_back').on('click', function () {
         mainView.router.loadPage('register.subject.html');
         $('#Subject-Null').hide();
-    
     });
 
    

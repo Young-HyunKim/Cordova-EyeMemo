@@ -55,7 +55,6 @@ myApp.onPageInit("Time-subject", function (page) {
     $$('#register_back').on('click', function () {
         mainView.router.loadPage('register.subject.html');
         $('#Subject-Null').hide();
-    
     });
 
    

@@ -33,7 +33,9 @@ myApp.onPageInit("Camera", function (page) {
     function onSuccess(imageURI) {
         var image = document.getElementById('Pic_Image');
         image.src = imageURI;
+
         mainView.router.loadPage('home.page.html');
+        $$("#path_check").text(imageURI);
     }
     
     function onFail(message) {

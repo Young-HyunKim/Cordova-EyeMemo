@@ -6,23 +6,337 @@ var Color_Code = "#000";
 var Sub_Add_Limit = 12;
 var Stack_Is_Subject = "";
 var Stack_Count = 0;
+var Row_Count = 0;
 
 var NowTime = new Date();
 var Subject_List_Code = new Array();
+var Sibkect_List_Name = new Array();
 
 $(document).ready(function () {
     for (var i = 0; i < Sub_Add_Limit; i++) {
         Subject_List_Code[i] = "";
         console.log("Subject_List_Code : " + Subject_List_Code[i]);
+        
     }
 });
 
 myApp.onPageInit("home-page", function (page) {
 
 
+
+    $(document).ready(function () {
+
+        Row_Count = 0;
+
+        for (var i = 0; i < Sub_Add_Limit; i++) {
+            if (localStorage.getItem("R_Subject_Name[" + i + "]") != null) {
+                Row_Count += 1;
+                console.log("Row_Count += 1 : " +Row_Count);
+            }
+
+        }
+        console.log("Row_Count : " + Row_Count);
+
+        switch (Row_Count) {
+        
+            case 0:
+            console.log("case 0");
+
+                var pickerDevice = myApp.picker({
+                    input: '#picker-device',
+                    cols: [
+                    {
+                        textAlign: 'center',
+                        values: [
+                            "수업 이외"
+                        ]
+                    }
+                    ]
+                });
+
+                break;
+            
+            case 1:
+            console.log("case 1");
+
+                var pickerDevice = myApp.picker({
+                    input: '#picker-device',
+                    cols: [
+                        {
+                            textAlign: 'center',
+                            values: [
+                                Subject_List_Code[0],
+                                "수업 이외"
+                            ]
+                        }
+                    ]
+                });
+
+                break;
+            
+            case 2:
+            console.log("case 2");
+
+                var pickerDevice = myApp.picker({
+                    input: '#picker-device',
+                    cols: [
+                        {
+                            textAlign: 'center',
+                            values: [
+                                Subject_List_Code[0],
+                                Subject_List_Code[1],
+                                "수업 이외"
+                            ]
+                        }
+                    ]
+                });
+
+                break;
+
+            case 3:
+            console.log("case 3");
+
+            var pickerDevice = myApp.picker({
+                input: '#picker-device',
+                cols: [
+                    {
+                        textAlign: 'center',
+                        values: [
+                            Subject_List_Code[0],
+                            Subject_List_Code[1],
+                            Subject_List_Code[2],
+                            "수업 이외"
+                            
+                        ]
+                    }
+                ]
+            });
+
+            break;
+
+            case 4:
+            console.log("case 4");
+
+            var pickerDevice = myApp.picker({
+                input: '#picker-device',
+                cols: [
+                    {
+                        textAlign: 'center',
+                        values: [
+                            Subject_List_Code[0],
+                            Subject_List_Code[1],
+                            Subject_List_Code[2],
+                            Subject_List_Code[3],
+                            "수업 이외"
+                        ]
+                    }
+                ]
+            });
+
+            break;
+
+            case 5:
+            console.log("case 5");
+
+            var pickerDevice = myApp.picker({
+                input: '#picker-device',
+                cols: [
+                    {
+                        textAlign: 'center',
+                        values: [
+                            Subject_List_Code[0],
+                            Subject_List_Code[1],
+                            Subject_List_Code[2],
+                            Subject_List_Code[3],
+                            Subject_List_Code[4],
+                            "수업 이외"
+                        ]
+                    }
+                ]
+            });
+
+            break;
+
+            case 6:
+            console.log("case 6");
+
+            var pickerDevice = myApp.picker({
+                input: '#picker-device',
+                cols: [
+                    {
+                        textAlign: 'center',
+                        values: [
+                            Subject_List_Code[0],
+                            Subject_List_Code[1],
+                            Subject_List_Code[2],
+                            Subject_List_Code[3],
+                            Subject_List_Code[4],
+                            Subject_List_Code[5],
+
+                            "수업 이외"
+                        ]
+                    }
+                ]
+            });
+
+            break;
+
+            case 7:
+            console.log("case 7");
+
+            var pickerDevice = myApp.picker({
+                input: '#picker-device',
+                cols: [
+                    {
+                        textAlign: 'center',
+                        values: [
+                            Subject_List_Code[0],
+                            Subject_List_Code[1],
+                            Subject_List_Code[2],
+                            Subject_List_Code[3],
+                            Subject_List_Code[4],
+                            Subject_List_Code[5],
+                            Subject_List_Code[6],
+                            "수업 이외"
+                        ]
+                    }
+                ]
+            });
+
+            break;
+
+            case 8:
+            console.log("case 8");
+
+            var pickerDevice = myApp.picker({
+                input: '#picker-device',
+                cols: [
+                    {
+                        textAlign: 'center',
+                        values: [
+                            Subject_List_Code[0],
+                            Subject_List_Code[1],
+                            Subject_List_Code[2],
+                            Subject_List_Code[3],
+                            Subject_List_Code[4],
+                            Subject_List_Code[5],
+                            Subject_List_Code[6],
+                            Subject_List_Code[7],
+                            "수업 이외"
+                        ]
+                    }
+                ]
+            });
+
+            break;
+
+            case 9:
+            console.log("case 9");
+
+            var pickerDevice = myApp.picker({
+                input: '#picker-device',
+                cols: [
+                    {
+                        textAlign: 'center',
+                        values: [
+                            Subject_List_Code[0],
+                            Subject_List_Code[1],
+                            Subject_List_Code[2],
+                            Subject_List_Code[3],
+                            Subject_List_Code[4],
+                            Subject_List_Code[5],
+                            Subject_List_Code[6],
+                            Subject_List_Code[7],
+                            Subject_List_Code[8],
+                            "수업 이외"
+                        ]
+                    }
+                ]
+            });
+
+            break;
+
+            case 10:
+            console.log("case 10");
+
+            var pickerDevice = myApp.picker({
+                input: '#picker-device',
+                cols: [
+                    {
+                        textAlign: 'center',
+                        values: [
+                            Subject_List_Code[0],
+                            Subject_List_Code[1],
+                            Subject_List_Code[2],
+                            Subject_List_Code[3],
+                            Subject_List_Code[4],
+                            Subject_List_Code[5],
+                            Subject_List_Code[6],
+                            Subject_List_Code[7],
+                            Subject_List_Code[8],
+                            Subject_List_Code[9],
+                            "수업 이외"
+                        ]
+                    }
+                ]
+            });
+
+            break;
+
+            case 11:
+            console.log("case 11");
+
+            var pickerDevice = myApp.picker({
+                input: '#picker-device',
+                cols: [
+                    {
+                        textAlign: 'center',
+                        values: [
+                            Subject_List_Code[0],
+                            Subject_List_Code[1],
+                            Subject_List_Code[2],
+                            Subject_List_Code[3],
+                            Subject_List_Code[4],
+                            Subject_List_Code[5],
+                            Subject_List_Code[6],
+                            Subject_List_Code[7],
+                            Subject_List_Code[8],
+                            Subject_List_Code[9],
+                            Subject_List_Code[10],
+                            "수업 이외"
+                        ]
+                    }
+                ]
+            });
+
+            break;
+
+            default:
+                break;
+        }
+    });
+
+    function Schedule_Exits(){
+        if (Row_Count != 0) {
+            Null_Schedule_Message();
+            console.log("시간표 존재");
+        }
+    }
+
+    function Null_Schedule_Message() {
+        var MessageRemove_Html = "";
+        
+        MessageRemove_Html += "<li class = 'item-content' id='Not_Schedule'><h3>등록된 시간표가 없습니다.</h3></li>" 
+        
+        $$("#Not_Schedule").show();
+        $$("#Not_Schedule").remove(MessageRemove_Html);
+    }
+
     $(document).ready(function () {
         $("#btn-table").css("margin", "0 auto");
         $$("#Subject-Null").css('border', 'solid #E21830');
+
+        Schedule_Exits();
     });
 
     $(document).ready(function () {
@@ -41,19 +355,6 @@ myApp.onPageInit("home-page", function (page) {
     $("#Subject-Null").css('border', 'solid #E21830');
     $("#Note-Null").css('border', 'solid #E21830');
     $("#Pic-Null").css('border', 'solid #E21830');
-
-    
-/*
-    
-    $('#Pic_List').slimScroll({
-        height: '210px'
-    });
-
-    $('#MediaList').slimScroll({
-        height: '360px'
-    });
-    
-*/
 
     $('#Note_List').slimScroll({
         height: '380px'
@@ -87,20 +388,65 @@ myApp.onPageInit("home-page", function (page) {
 
     $$("#folder_note_btn").on('click', function () {
         showHomeTabFolder_Note();
+        List_Reset();
+
         $$("#memo-list").text("메모");
     });
     
     $$("#folder_photo_btn").on('click', function () {
         showHomeTabFolder_Photo();
+        List_Reset();
+
         $$("#memo-list").text("사진");
     });
 
+    var Cols = "";
+    
+
+    for (var i = 0; i < Sub_Add_Limit; i++) {
+        Subject_List_Code[i] = localStorage.getItem("R_Subject_Name["+ i +"]");
+        
+        if (localStorage.getItem("R_Subject_Name["+ i +"]") != null) {
+            Cols += localStorage.getItem("R_Subject_Name["+ i +"]") + ",";
+            
+            console.log(Cols);
+        }
+
+    }
+
+    
+
+      
+
+    function List_Reset() {
+        var html_1 = "";
+
+        html_1 = "<ul id='Notes_Content' style='display: block;padding-left: 5px;'>"
+            + "</ul>";
+
+        $$("#Sub_List_Group").show();
+        $$("#Sub_List_Group").remove(html_1);
+
+        var html_2 = "";
+
+        html_2 = "<div class='list-group' id='Sub_List_Group'>"
+            + "<ul id='Notes_Content' style='display: block;padding-left: 5px;'>"
+            + "</ul>"
+            + "</div>";
+
+        $$("#Notes").show();
+        $$("#Notes").append(html_2);
+    }
+
+    
 
     $(document).ready(function () {
         CurrentDateTime();
         setInterval(CurrentSubject,1000);
         setInterval(ContentSet, 1000);
     });
+
+    
 
     function ContentSet() {
         var Today = new Date();
@@ -173,54 +519,93 @@ myApp.onPageInit("home-page", function (page) {
 
 
     $$('#Search_Subject').on('click', function () {
-        var Sub_Name = $$("#keyword").val();
-        
+        var Sub_Name = $$("#picker-device").val();
 
         if(Sub_Name == "" || Sub_Name == null){
             myApp.alert("과목명을 입력해주세요!");
 
         }else{
             
-            Stack_Is_Subject = Sub_Name;
+            
+            var html_1 = "";
 
-            console.log("Stack_Is_Subject : " + Stack_Is_Subject);
+            html_1 = "<ul id='Notes_Content' style='display: block;padding-left: 5px;'>" 
+                    + "</ul>";
 
-            if (Stack_Count == 0 && Stack_Is_Subject == Sub_Name) {
-                Stack_Count += 1;
+            $$("#Sub_List_Group").show();
+            $$("#Sub_List_Group").remove(html_1);
 
-                console.log("Stack_Count : " + Stack_Count);
-                console.log("Stack : " + "True");
+            var html_2 ="";
 
-                console.log(localStorage.getItem("Note_Numbering"));
-                console.log("ParseInt : " + parseInt(localStorage.getItem("Note_Numbering")));
+            html_2 = "<div class='list-group' id='Sub_List_Group'>"
+                    + "<ul id='Notes_Content' style='display: block;padding-left: 5px;'>"
+                    + "</ul>"
+                    + "</div>";
 
-                var Note_Limit = parseInt(localStorage.getItem("Note_Numbering"));
+            $$("#Notes").show();
+            $$("#Notes").append(html_2);
 
-                for (let index = 0; index < Note_Limit + 1; index++) {
-                    console.log(localStorage.getItem("Note_Numbering"));
+            var NPCS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + (NowTime.getHours() - 9) + "]");
+            var List_Count = 0;
+
+            if (NPCS == "" || NPCS == null) {
+                List_Count = parseInt(localStorage.getItem("Note_Numbering_" + "수업 이외"));
+                console.log("List_Count[수업 이외] : " + List_Count);
+
+                Search_Notes("수업 이외");
+
+            } else {
+                List_Count = parseInt(localStorage.getItem("Note_Numbering_" + NPCS));
+                console.log("List_Count[" + NPCS + "] : " + List_Count);
+
+                List_Stack_Correction(List_Count);
+                Search_Notes(NPCS);
+
+            }
+
+            function Search_Notes(Pramater_Subject_Name){
+                var Note_Limit = parseInt(localStorage.getItem("Note_Numbering_" + Pramater_Subject_Name));
+                console.log("ParseInt : " + parseInt(localStorage.getItem("Note_Numbering_" + Pramater_Subject_Name)));
+
+                for (let index = 1; index < Note_Limit + 1; index++) {
+                    console.log(localStorage.getItem("Note_Numbering_" + Pramater_Subject_Name));
                     console.log("Sub_Name : " + Sub_Name);
 
                     var Sub_Note = localStorage.getItem(Sub_Name + "[" + index + "]");
-                    Show_Notes(Sub_Note);
+                    
+                    if (Sub_Note != null || Sub_Name == null) {
 
-                    Sub_Name = Sub_Name;
+                        Show_Notes(Sub_Note,index);
+
+                    }else{
+                        myApp.alert("검색 결과가 없습니다!");
+                    }
+                    
+                    
+
                 }
-                
-            }else{
-                
             }
-
-            
-            
-            
+   
         }
         
     });
 
-    function Show_Notes(N_content){
-        var html = "";
+    function List_Stack_Correction(last_element){  
+
+        for (let index = 1; index < last_element; index++) {
+            
+            $$("#Notes_Content").show();
+            $$("#Notes_Content").remove(html);
+            
+        }
+
+    }
+
+    function Show_Notes(N_content,i){
         
-        html += "<li>"
+        var html = "";
+ 
+        html += "<li id='note_No."+ i +">"
              + "<a href='#' class='item-link item-content'>"
              + "<div class='item-inner'>"
              + "<div class='item-title-row'>"
@@ -231,8 +616,8 @@ myApp.onPageInit("home-page", function (page) {
              + "</a>"
              + "</li>";
 
-        $$("#Notes").show();
-        $$("#Notes").append(html);
+        $$("#Notes_Content").show();
+        $$("#Notes_Content").append(html);
 
         console.log(html);
     }
@@ -311,6 +696,7 @@ myApp.onPageInit("home-page", function (page) {
     });
     
     function Get_Subject() {
+
         for (let i = 0; i < Add_Limit; i++) {
             
             var TS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + i + "]");
@@ -335,6 +721,7 @@ myApp.onPageInit("home-page", function (page) {
 
                 Today_SubjectList(i + 1, i + 9, TS);
 
+                
             }else{
 
             }
@@ -363,7 +750,7 @@ myApp.onPageInit("home-page", function (page) {
         $$("#Today_Subjects").show();
         $$("#Today_Subjects").append(html);
     
-        $("#" + "Schedule-Card-" + Id_Number).css('border', 'solid ' + Color_Code);
+        $("#" + "Schedule-Card-" + Id_Number).css('border', 'solid 2px' + Color_Code);
     
     }
 

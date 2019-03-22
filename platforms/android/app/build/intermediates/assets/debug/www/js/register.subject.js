@@ -29,8 +29,14 @@ myApp.onPageInit("Register-Subject", function (page) {
   
     
     $$('#data_save').on('click', function () {
-        console.log(count);
-        mainView.router.loadPage('time.subject.html');
+        console.log("Subject Count : "+count);
+
+        if (count <1) {
+            myApp.alert("한 과목 이상 등록해 주세요.");
+        }else{
+            mainView.router.loadPage('time.subject.html');
+        }
+        
 
         for (var i = 0; i < count; i++) {
             if(count == (i+1)){
@@ -40,9 +46,6 @@ myApp.onPageInit("Register-Subject", function (page) {
             
         }
 
-        mainView.router.loadPage('Time.subject.html');
-
-        
         function ValueInput(count){
            
             for (var i = 0; i < count; i++) {
@@ -64,7 +67,7 @@ myApp.onPageInit("Register-Subject", function (page) {
     $$("#btn_Add_Content").on('click', function () {
         count += 1;
 
-        if(count == 13){
+        if(count == 12){
             myApp.alert("최대 12개 까지 입력하실 수 있습니다.");
             count=12;
         }

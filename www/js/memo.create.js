@@ -5,6 +5,8 @@ var Note_Numbering = 0;
 myApp.onPageInit("Note", function (page) {
     
     $(document).ready(function () {
+        $$("#content").text();
+
         var NPCS = localStorage.getItem("T_Subject_Name[" + NowTime.getDay() + "][" + (NowTime.getHours() - 9) + "]");
 
         if (NPCS == "" || NPCS == null) {
